@@ -1,0 +1,123 @@
+*
+	font-family: Roboto
+a
+	text-decoration: none
+	color: inherit
+body
+	background-color: black
+
+.navbar
+	position: fixed
+	display: flex
+	justify-content: space-between
+	width: 85%
+	padding: 18px 
+	list-style-type: none
+	color: #ffa500
+	border-radius: 20px
+	background-color: rgba(0, 0, 0, 0.6)
+	&_item
+		position: relative
+		display: inline-block
+		margin-top: 10px
+		&:after
+			content: ''
+			position: absolute
+			width: 100%
+			height: 2px
+			background-color: #ffa500
+			bottom: 0
+			left: 0
+			transform: scaleX(0)
+			transform-origin: center
+			transition: transform 0.3s ease-out
+		&:hover:after
+			transform: scaleX(1)
+			transform-origin: center
+	img
+		width: 50px
+		height: 50px
+	i
+		width: 20px
+		height: 20px
+
+.sub_label
+	display: flex
+
+.promo
+	height: 800px
+	background: url(../img/bg/main_bg.jpg) center center/cover no-repeat
+	&_name
+		margin-left: 50%
+		margin-top: 8%
+		font-size: 100px
+		font-weight: 5000px
+		width: 100%
+		height: 100%
+		color: orange
+		opacity: 0
+		animation: fadeIn ease-in 1
+		animation-fill-mode: forwards
+		animation-duration: 2s
+		
+		@keyframes fadeIn
+			0%
+				opacity: 0
+			100%
+				opacity: 1
+		
+	&_sub
+		margin-left: 40%
+		font-size: 30px
+		font-weight: 5000px
+		width: 100%
+		height: 100%
+		color: white
+		opacity: 0
+		animation: fadeIn1 ease-in 1
+		animation-fill-mode: forwards
+		animation-duration: 2s
+		
+		@keyframes fadeIn1
+			0%
+				opacity: 0
+			100%
+				opacity: 1
+	
+
+section
+	color: white
+
+.calendar_btn
+	text-align: center
+
+.chart
+	background-color: white
+	color: black
+
+.btn
+	background-color: orange
+	border-radius: 10px
+	padding: 10px 20px
+	&:hover
+		transition: 1s
+		background-color: green
+
+.label
+	text-align: center
+
+.name_person
+	text-align: center
+	background-color: red
+.desc
+	background-color: red
+	margin-bottom: 10px
+
+.site
+	background-color: green
+footer
+	background-color: white
+.squad
+	&_img
+		width: 2px
+		height: 2px
