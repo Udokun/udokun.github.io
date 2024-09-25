@@ -1,0 +1,39 @@
+.promo
+	height: 800px
+	background: url(../img/bg/main_bg.jpg) center center/cover no-repeat
+	&_name
+		margin-left: 50%
+		margin-top: 8%
+		font-size: 100px
+		font-weight: 5000px
+		width: 100%
+		height: 100%
+		color: orange
+		opacity: 0
+		animation: fadeIn ease-in 1
+		animation-fill-mode: forwards
+		animation-duration: 2s
+		
+		@keyframes fadeIn
+			0%
+				opacity: 0
+			100%
+				opacity: 1
+		
+	&_sub
+		margin-left: 40%
+		font-size: 30px
+		font-weight: 5000px
+		width: 100%
+		height: 100%
+		color: white
+		opacity: 0
+		animation: fadeIn1 ease-in 1
+		animation-fill-mode: forwards
+		animation-duration: 2s
+		
+		@keyframes fadeIn1
+			0%
+				opacity: 0
+			100%
+				opacity: 1

@@ -1,11 +1,18 @@
-let currentIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const slideInterval = 3000;
- 
-function changeSlide() {
-  slides[currentIndex].style.opacity = 0;
-  currentIndex = (currentIndex + 1) % slides.length;
-  slides[currentIndex].style.opacity = 1;
-}
- 
-setInterval(changeSlide, slideInterval);
+$(document).ready(function(){
+  $('.photogallery__slider').slick({
+    centerMode: true,
+    centerPadding: '60px',
+    slidesToShow: 3,
+    autoplay: true,
+    autoplaySpeed: 1200,
+    arrows: false,
+  });
+});
+
+$(document).ready(function(){
+  $('.carousel__inner').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+  });
+});

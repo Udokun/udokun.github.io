@@ -1,21 +1,9 @@
-* {
-  font-family: Roboto;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-body {
-  background-color: black;
-}
-
 .navbar {
   position: fixed;
   display: flex;
   justify-content: space-between;
   width: 85%;
+  height: 75px;
   padding: 18px;
   list-style-type: none;
   color: #ffa500;
@@ -25,7 +13,7 @@ body {
 .navbar_item {
   position: relative;
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 .navbar_item:after {
   content: "";
@@ -46,10 +34,7 @@ body {
 .navbar img {
   width: 50px;
   height: 50px;
-}
-.navbar i {
-  width: 20px;
-  height: 20px;
+  margin-top: -5px;
 }
 
 .promo {
@@ -98,6 +83,23 @@ body {
   }
 }
 
+* {
+  font-family: Roboto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  background-color: black;
+}
+
+.sub_label {
+  display: flex;
+}
+
 section {
   color: white;
 }
@@ -141,4 +143,45 @@ section {
 
 footer {
   background-color: white;
+}
+
+.squad_person1 {
+  background: url("../img/squad/TandV.jpg") center center/cover no-repeat;
+  height: 450px;
+  margin-bottom: 20px;
+}
+.squad_person2 {
+  background: url("../img/squad/Alexey.jpg") center center/cover no-repeat;
+  height: 450px;
+  margin-bottom: 20px;
+}
+.squad_person3 {
+  background: url("../img/squad/Ilya.jpg") center center/cover no-repeat;
+  height: 450px;
+  margin-bottom: 20px;
+}
+.squad_person4 {
+  background: url("../img/squad/July.jpg") center center/cover no-repeat;
+  height: 450px;
+  margin-bottom: 20px;
+}
+.squad_person5 {
+  background: url("../img/squad/July1.jpg") center center/cover no-repeat;
+  height: 450px;
+  margin-bottom: 20px;
+}
+.squad_person6 {
+  background: url("../img/squad/Kristina.jpg") center center/cover no-repeat;
+  height: 450px;
+  margin-bottom: 20px;
+}
+.squad_person7 {
+  background: url("../img/squad/Valera.jpg") center center/cover no-repeat;
+  height: 450px;
+  margin-bottom: 20px;
+}
+.squad_person8 {
+  background: url("../img/squad/Vitaly.jpg") center center/cover no-repeat;
+  height: 450px;
+  margin-bottom: 20px;
 }/*# sourceMappingURL=style.css.map */
