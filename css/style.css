@@ -1,0 +1,361 @@
+.navbar {
+  position: fixed;
+  display: flex;
+  z-index: 1;
+  justify-content: space-between;
+  width: 85.5%;
+  height: 75px;
+  padding: 18px;
+  list-style-type: none;
+  color: #ffa500;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.navbar_item {
+  position: relative;
+  display: inline-block;
+  margin-top: 5px;
+}
+.navbar_item:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #ffa500;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-out;
+}
+.navbar_item:hover:after {
+  transform: scaleX(1);
+  transform-origin: center;
+}
+.navbar img {
+  width: 50px;
+  height: 50px;
+  margin-top: -5px;
+}
+
+.promo {
+  height: 800px;
+  background: url(../img/bg/main_bg.jpg) center center/cover no-repeat;
+}
+.promo_name {
+  margin-left: 50%;
+  margin-top: 8%;
+  font-size: 100px;
+  width: 450px;
+  height: 100%;
+  color: orange;
+  opacity: 0;
+  animation: fadeIn ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: 2s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.promo_sub {
+  margin-left: 40%;
+  font-size: 30px;
+  font-weight: 5000px;
+  width: 800px;
+  height: 100%;
+  color: white;
+  opacity: 0;
+  animation: fadeIn1 ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: 2s;
+}
+@keyframes fadeIn1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.calendar {
+  padding-bottom: 100px;
+}
+.calendar__tabs {
+  margin-top: 70px;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.calendar__tab {
+  width: 220px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 48px;
+  margin: 0 5px;
+  background-color: orange;
+  color: black;
+  cursor: pointer;
+  transition: 0.5s all;
+}
+.calendar__tab:hover {
+  box-shadow: 0 3px 20px red;
+}
+.calendar__tab_active {
+  color: white;
+  background-color: green;
+  width: 220px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 48px;
+  margin: 0 5px;
+}
+.calendar__content {
+  margin-top: 60px;
+  display: none;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.calendar__content_active {
+  display: flex;
+  transition: 0.5s all;
+}
+.calendar__overlay {
+  background: url(../img/calendar/img.jpg) center center/cover no-repeat;
+}
+.calendar__overlay2 {
+  background: url(../img/calendar/img1.jpg) center center/cover no-repeat;
+}
+.calendar__overlay3 {
+  background: url(../img/calendar/img2.jpg) center center/cover no-repeat;
+}
+.calendar__overlay4 {
+  background: url(../img/calendar/img2.jpg) center center/cover no-repeat;
+}
+.calendar__overlay5 {
+  background: url(../img/calendar/img2.jpg) center center/cover no-repeat;
+}
+.calendar__overlay6 {
+  background: url(../img/calendar/img2.jpg) center center/cover no-repeat;
+}
+.calendar__overlay7 {
+  background: url(../img/calendar/img2.jpg) center center/cover no-repeat;
+}
+.calendar__overlay8 {
+  background: url(../img/calendar/img2.jpg) center center/cover no-repeat;
+}
+.calendar__overlay9 {
+  background: url(../img/calendar/img2.jpg) center center/cover no-repeat;
+}
+.calendar-item {
+  border-radius: 10px;
+  width: 400px;
+  min-height: 500px;
+  padding: 20px 20px 26px 20px;
+  margin-bottom: 20px;
+}
+.calendar-item__tittle {
+  color: black;
+  font-size: 70px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+.calendar-item__price {
+  background-color: orange;
+  border-radius: 100px;
+  padding: 20px 0;
+  width: 150px;
+  color: black;
+  text-align: center;
+}
+
+.squad_person1 {
+  background: url("../img/squad/TandV.jpg") center center/cover no-repeat;
+  height: 450px;
+}
+.squad_desc {
+  position: relative;
+  bottom: -380px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: orange;
+}
+.squad_person2 {
+  background: url("../img/squad/Alexey.jpg") center center/cover no-repeat;
+  height: 450px;
+}
+.squad_desc {
+  position: relative;
+  bottom: -380px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: orange;
+}
+.squad_person3 {
+  background: url("../img/squad/Ilya.jpg") center center/cover no-repeat;
+  height: 450px;
+}
+.squad_desc {
+  position: relative;
+  bottom: -380px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: orange;
+}
+.squad_person4 {
+  background: url("../img/squad/July.jpg") center center/cover no-repeat;
+  height: 450px;
+}
+.squad_desc {
+  position: relative;
+  bottom: -380px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: orange;
+}
+.squad_person5 {
+  background: url("../img/squad/July1.jpg") center center/cover no-repeat;
+  height: 450px;
+}
+.squad_desc {
+  position: relative;
+  bottom: -380px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: orange;
+}
+.squad_person6 {
+  background: url("../img/squad/Kristina.jpg") center center/cover no-repeat;
+  height: 450px;
+}
+.squad_desc {
+  position: relative;
+  bottom: -380px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: orange;
+}
+.squad_person7 {
+  background: url("../img/squad/Valera.jpg") center center/cover no-repeat;
+  height: 450px;
+}
+.squad_desc {
+  position: relative;
+  bottom: -380px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: orange;
+}
+.squad_person8 {
+  background: url("../img/squad/Vitaly.jpg") center center/cover no-repeat;
+  height: 450px;
+}
+.squad_desc {
+  position: relative;
+  bottom: -380px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: orange;
+}
+
+.button {
+  border: none;
+  border-radius: 10px;
+}
+.button_mini {
+  width: 140px;
+  height: 50px;
+  position: relative;
+  background-color: orange;
+}
+
+* {
+  font-family: Roboto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+body {
+  background-color: black;
+}
+
+.sub_label {
+  display: flex;
+}
+
+section {
+  color: white;
+}
+
+.calendar_btn {
+  text-align: center;
+}
+
+.chart {
+  background-color: white;
+  color: black;
+}
+
+.btn {
+  background-color: orange;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+.btn:hover {
+  transition: 1s;
+  background-color: green;
+}
+
+.label {
+  text-align: center;
+}
+.name_person {
+  text-align: center;
+  background-color: red;
+}
+
+.desc {
+  background-color: red;
+  margin-bottom: 10px;
+}
+
+.site {
+  background-color: green;
+}
+
+footer {
+  background-color: white;
+}/*# sourceMappingURL=style.css.map */
