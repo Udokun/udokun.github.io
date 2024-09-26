@@ -1,8 +1,9 @@
 .navbar {
   position: fixed;
   display: flex;
+  z-index: 1;
   justify-content: space-between;
-  width: 85%;
+  width: 85.5%;
   height: 75px;
   padding: 18px;
   list-style-type: none;
@@ -45,8 +46,7 @@
   margin-left: 50%;
   margin-top: 8%;
   font-size: 100px;
-  font-weight: 5000px;
-  width: 100%;
+  width: 450px;
   height: 100%;
   color: orange;
   opacity: 0;
@@ -66,7 +66,7 @@
   margin-left: 40%;
   font-size: 30px;
   font-weight: 5000px;
-  width: 100%;
+  width: 800px;
   height: 100%;
   color: white;
   opacity: 0;
@@ -81,6 +81,103 @@
   100% {
     opacity: 1;
   }
+}
+
+.squad_person1 {
+  background: url("../img/squad/TandV.jpg") center center/cover no-repeat;
+  height: 450px;
+}
+.squad_desc {
+  position: relative;
+  bottom: -380px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: orange;
+}
+.squad_person2 {
+  background: url("../img/squad/Alexey.jpg") center center/cover no-repeat;
+  height: 450px;
+}
+.squad_desc {
+  position: relative;
+  bottom: -380px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: orange;
+}
+.squad_person3 {
+  background: url("../img/squad/Ilya.jpg") center center/cover no-repeat;
+  height: 450px;
+}
+.squad_desc {
+  position: relative;
+  bottom: -380px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: orange;
+}
+.squad_person4 {
+  background: url("../img/squad/July.jpg") center center/cover no-repeat;
+  height: 450px;
+}
+.squad_desc {
+  position: relative;
+  bottom: -380px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: orange;
+}
+.squad_person5 {
+  background: url("../img/squad/July1.jpg") center center/cover no-repeat;
+  height: 450px;
+}
+.squad_desc {
+  position: relative;
+  bottom: -380px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: orange;
+}
+.squad_person6 {
+  background: url("../img/squad/Kristina.jpg") center center/cover no-repeat;
+  height: 450px;
+}
+.squad_desc {
+  position: relative;
+  bottom: -380px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: orange;
+}
+.squad_person7 {
+  background: url("../img/squad/Valera.jpg") center center/cover no-repeat;
+  height: 450px;
+}
+.squad_desc {
+  position: relative;
+  bottom: -380px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: orange;
+}
+.squad_person8 {
+  background: url("../img/squad/Vitaly.jpg") center center/cover no-repeat;
+  height: 450px;
+}
+.squad_desc {
+  position: relative;
+  bottom: -380px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: orange;
 }
 
 * {
@@ -125,9 +222,7 @@ section {
 
 .label {
   text-align: center;
-  text-transform: uppercase;
 }
-
 .name_person {
   text-align: center;
   background-color: red;
@@ -144,45 +239,4 @@ section {
 
 footer {
   background-color: white;
-}
-
-.squad_person1 {
-  background: url("../img/squad/TandV.jpg") center center/cover no-repeat;
-  height: 450px;
-  margin-bottom: 20px;
-}
-.squad_person2 {
-  background: url("../img/squad/Alexey.jpg") center center/cover no-repeat;
-  height: 450px;
-  margin-bottom: 20px;
-}
-.squad_person3 {
-  background: url("../img/squad/Ilya.jpg") center center/cover no-repeat;
-  height: 450px;
-  margin-bottom: 20px;
-}
-.squad_person4 {
-  background: url("../img/squad/July.jpg") center center/cover no-repeat;
-  height: 450px;
-  margin-bottom: 20px;
-}
-.squad_person5 {
-  background: url("../img/squad/July1.jpg") center center/cover no-repeat;
-  height: 450px;
-  margin-bottom: 20px;
-}
-.squad_person6 {
-  background: url("../img/squad/Kristina.jpg") center center/cover no-repeat;
-  height: 450px;
-  margin-bottom: 20px;
-}
-.squad_person7 {
-  background: url("../img/squad/Valera.jpg") center center/cover no-repeat;
-  height: 450px;
-  margin-bottom: 20px;
-}
-.squad_person8 {
-  background: url("../img/squad/Vitaly.jpg") center center/cover no-repeat;
-  height: 450px;
-  margin-bottom: 20px;
 }/*# sourceMappingURL=style.css.map */
