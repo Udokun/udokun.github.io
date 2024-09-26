@@ -1,0 +1,84 @@
+.calendar
+    padding-bottom: 100px
+    &__tabs
+        margin-top: 70px
+        list-style-type: none
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-bottom: 0
+        padding-left: 0
+    &__tab
+        width: 220px
+        height: 50px
+        border-radius: 10px
+        font-size: 18px
+        font-weight: 400
+        text-transform: uppercase
+        text-align: center
+        line-height: 48px
+        margin: 0 5px
+        background-color: orange
+        color: black
+        cursor: pointer
+        transition: 0.5s all
+        &:hover
+            box-shadow: 0 3px 20px red
+        &_active
+            color: white
+            background-color: green
+            width: 220px
+            height: 50px
+            border-radius: 10px
+            font-size: 18px
+            font-weight: 400
+            text-transform: uppercase
+            text-align: center
+            line-height: 48px
+            margin: 0 5px
+    &__content
+        margin-top: 60px
+        display: none
+        justify-content: space-between
+        flex-wrap: wrap
+        &_active
+            display: flex
+            transition: 0.5s all
+    &__overlay
+        background: url(../img/calendar/img.jpg) center center/cover no-repeat
+    &__overlay2
+        background: url(../img/calendar/img1.jpg) center center/cover no-repeat
+    &__overlay3
+        background: url(../img/calendar/img2.jpg) center center/cover no-repeat
+    &__overlay4
+        background: url(../img/calendar/img2.jpg) center center/cover no-repeat
+    &__overlay5
+        background: url(../img/calendar/img2.jpg) center center/cover no-repeat
+    &__overlay6
+        background: url(../img/calendar/img2.jpg) center center/cover no-repeat
+    &__overlay7
+        background: url(../img/calendar/img2.jpg) center center/cover no-repeat
+    &__overlay8
+        background: url(../img/calendar/img2.jpg) center center/cover no-repeat
+    &__overlay9
+        background: url(../img/calendar/img2.jpg) center center/cover no-repeat
+    &-item
+        border-radius: 10px
+        width: 400px
+        min-height: 500px
+        padding: 20px 20px 26px 20px
+        margin-bottom: 20px
+        &__tittle
+            color: black
+            font-size: 70px
+            font-weight: 700
+            text-align: center
+            text-transform: uppercase
+        &__price
+            background-color: orange
+            border-radius: 100px
+            padding: 20px 0
+            width: 150px
+            color: black
+            text-align: center
+            

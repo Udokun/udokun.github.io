@@ -45,8 +45,7 @@
 		</div>
 	</section>
 	<section class="about_us" id="about">
-		<div class="col-md-6">О</div>
-		<div class="col-md-6">НАС</div>
+	<h2 class="tittle">О НАС</h2>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 offset-md-3">
@@ -73,22 +72,96 @@
 		</div>
 	</section>
 	<section class="calendar" id="calendar">
-		<div class="label">РАСПИСАНИЕ</div>
 		<div class="container">
-			<div class="row">
-				<div class="col-md-10 offset-md-1">
-					<div class="calendar_btn">
-						<button class="btn">СЕНТЯБРЬ</button>
-						<button class="btn">ОКТЯБРЬ</button>
-						<button class="btn">НОЯБРЬ</button>
-						<button class="btn">ДЕКАБРЬ</button>
+			<h2 class="tittle">РАСПИСАНИЕ</h2>
+			<ul class="calendar__tabs">
+				<li class="calendar__tab calendar__tab_active">ОКТЯБРЬ</li>
+				<li class="calendar__tab">НОЯБРЬ</li>
+				<li class="calendar__tab">ДЕКАБРЬ</li>
+			</ul>
+
+			<div class="calendar__content calendar__content_active">
+				<div class="calendar__overlay">
+					<div class="calendar-item">
+						<div class="calendar-item__price">12000руб.</div>
+						<div class="calendar-item__tittle">Грузия</div>
+						<div class="calendar__date">07.10</div>
+						<button class="button button_mini">НАПИСАТЬ НАМ</button>
+					</div>
+				</div>
+				<div class="calendar__overlay2">
+					<div class="calendar-item">
+						<div class="calendar-item__price">12000руб.</div>
+						<div class="calendar-item__tittle">АЗИЯ</div>
+						<div class="calendar__date">07.10</div>
+						<button class="button button_mini">НАПИСАТЬ НАМ</button>
+					</div>
+				</div>
+				<div class="calendar__overlay3">
+					<div class="calendar-item">
+						<div class="calendar-item__price">12000руб.</div>
+						<div class="calendar-item__tittle">ЕВРАЗИЯ</div>
+						<div class="calendar__date">07.10</div>
+						<button class="button button_mini">НАПИСАТЬ НАМ</button>
+					</div>
+				</div>
+			</div>
+			<div class="calendar__content">
+				<div class="calendar__overlay4">
+					<div class="calendar-item">
+						<div class="calendar-item__price">12000руб.</div>
+						<div class="calendar-item__tittle">ЯПОНИЯ</div>
+						<div class="calendar__date">07.10</div>
+						<button class="button button_mini">НАПИСАТЬ НАМ</button>
+					</div>
+				</div>
+				<div class="calendar__overlay5">
+					<div class="calendar-item">
+						<div class="calendar-item__price">12000руб.</div>
+						<div class="calendar-item__tittle">ФИНЛЯНДИЯ</div>
+						<div class="calendar__date">07.10</div>
+						<button class="button button_mini">НАПИСАТЬ НАМ</button>
+					</div>
+				</div>
+				<div class="calendar__overlay6">
+					<div class="calendar-item">
+						<div class="calendar-item__price">12000руб.</div>
+						<div class="calendar-item__tittle">АФРИКА</div>
+						<div class="calendar__date">07.10</div>
+						<button class="button button_mini">НАПИСАТЬ НАМ</button>
+					</div>
+				</div>
+			</div>
+			<div class="calendar__content">
+				<div class="calendar__overlay7">
+					<div class="calendar-item">
+						<div class="calendar-item__price">12000руб.</div>
+						<div class="calendar-item__tittle">АМЕРИКА</div>
+						<div class="calendar__date">07.10</div>
+						<button class="button button_mini">НАПИСАТЬ НАМ</button>
+					</div>
+				</div>
+				<div class="calendar__overlay8">
+					<div class="calendar-item">
+						<div class="calendar-item__price">12000руб.</div>
+						<div class="calendar-item__tittle">ГРЕНЛАНДИЯ</div>
+						<div class="calendar__date">07.10</div>
+						<button class="button button_mini">НАПИСАТЬ НАМ</button>
+					</div>
+				</div>
+				<div class="calendar__overlay9">
+					<div class="calendar-item">
+						<div class="calendar-item__price">12000руб.</div>
+						<div class="calendar-item__tittle">ВОЛГОДОНСК</div>
+						<div class="calendar__date">07.10</div>
+						<button class="button button_mini">НАПИСАТЬ НАМ</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 	<section class="photogallery" id="photogallery">
-		<div class="label">ФОТО</div>
+	<h2 class="tittle">ФОТО</h2>
 		<div class="container">
 			<div class="row">
 					<div class="photogallery__slider">
@@ -123,9 +196,7 @@
 		</div>
 	</section>
 	<section class="squad" id="squad">
-		<div class="label">
-			Наша команда
-		</div>
+	<h2 class="tittle">НАША КОМАНДА</h2>
 		<div class="container">
 			<div class="row">
 				<div class="carousel__inner">
@@ -191,7 +262,7 @@
 		</div>
 	</section>
 	<section class="feedback" id="feedback">
-		<div class="label">Отзывы</div>
+	<h2 class="tittle">ОТЗЫВЫ</h2>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
@@ -246,7 +317,7 @@
 		</div>
 	</section>
 	<section class="contact" id="contact">
-		<div class="label">Контакты</div>
+	<h2 class="tittle">КОНТАКТЫ</h2>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-10 offset-md-1">						
@@ -263,6 +334,7 @@
 <footer>ТУТ НАХОДЯТСЯ НОГИ САЙТА </footer>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="js/slick.min.js"></script>
 <script src="js/script.js"></script>
 <script src="https://kit.fontawesome.com/1c6cb88e6c.js" crossorigin="anonymous"></script>

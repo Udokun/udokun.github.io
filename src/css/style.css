@@ -83,6 +83,109 @@
   }
 }
 
+.calendar {
+  padding-bottom: 100px;
+}
+.calendar__tabs {
+  margin-top: 70px;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.calendar__tab {
+  width: 220px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 48px;
+  margin: 0 5px;
+  background-color: orange;
+  color: black;
+  cursor: pointer;
+  transition: 0.5s all;
+}
+.calendar__tab:hover {
+  box-shadow: 0 3px 20px red;
+}
+.calendar__tab_active {
+  color: white;
+  background-color: green;
+  width: 220px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 48px;
+  margin: 0 5px;
+}
+.calendar__content {
+  margin-top: 60px;
+  display: none;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.calendar__content_active {
+  display: flex;
+  transition: 0.5s all;
+}
+.calendar__overlay {
+  background: url(../img/calendar/img.jpg) center center/cover no-repeat;
+}
+.calendar__overlay2 {
+  background: url(../img/calendar/img1.jpg) center center/cover no-repeat;
+}
+.calendar__overlay3 {
+  background: url(../img/calendar/img2.jpg) center center/cover no-repeat;
+}
+.calendar__overlay4 {
+  background: url(../img/calendar/img2.jpg) center center/cover no-repeat;
+}
+.calendar__overlay5 {
+  background: url(../img/calendar/img2.jpg) center center/cover no-repeat;
+}
+.calendar__overlay6 {
+  background: url(../img/calendar/img2.jpg) center center/cover no-repeat;
+}
+.calendar__overlay7 {
+  background: url(../img/calendar/img2.jpg) center center/cover no-repeat;
+}
+.calendar__overlay8 {
+  background: url(../img/calendar/img2.jpg) center center/cover no-repeat;
+}
+.calendar__overlay9 {
+  background: url(../img/calendar/img2.jpg) center center/cover no-repeat;
+}
+.calendar-item {
+  border-radius: 10px;
+  width: 400px;
+  min-height: 500px;
+  padding: 20px 20px 26px 20px;
+  margin-bottom: 20px;
+}
+.calendar-item__tittle {
+  color: black;
+  font-size: 70px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+.calendar-item__price {
+  background-color: orange;
+  border-radius: 100px;
+  padding: 20px 0;
+  width: 150px;
+  color: black;
+  text-align: center;
+}
+
 .squad_person1 {
   background: url("../img/squad/TandV.jpg") center center/cover no-repeat;
   height: 450px;
@@ -180,6 +283,17 @@
   color: orange;
 }
 
+.button {
+  border: none;
+  border-radius: 10px;
+}
+.button_mini {
+  width: 140px;
+  height: 50px;
+  position: relative;
+  background-color: orange;
+}
+
 * {
   font-family: Roboto;
 }
@@ -187,6 +301,11 @@
 a {
   text-decoration: none;
   color: inherit;
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
 }
 
 body {
