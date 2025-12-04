@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронирование тура - VibeTour</title>
+    <link rel="icon" href="/icons/favicon/dark.png">
+    <link rel="stylesheet" href="css/style.min.css">
+    <style>
+        :root {
+            --dark-bg: #393E46;
+            --light-text: #FFFFFF;
+            --accent: #FCDA05;
+            --dark-accent: #e6c500;
+            --input-bg: #4a5059;
+            --input-border: #5a616b;
+            --card-bg: #424852;
+            --error: #ff3860;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .booking-page {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .booking-page__header {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .booking-page__logo {
+            width: 100px;
+            height: 100px;
+            justify-self: center;
+        }
+        
+        .booking-page__title {
+            color: var(--light-text);
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 20px 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .booking-page__steps {
+            display: grid;
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .booking-page__step {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            position: relative;
+            padding-left: 80px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-left: 4px solid var(--accent);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .booking-page__step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+        }
+        
+        .booking-page__step-number {
+            position: absolute;
+            left: 25px;
+            top: 25px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent), var(--dark-accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-bg);
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: 0 4px 10px rgba(252, 218, 5, 0.3);
+        }
+        
+        .booking-page__step-text {
+            color: var(--light-text);
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .booking-page__step-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .booking-page__social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .booking-page__social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--dark-bg);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .booking-page__social-link:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(252, 218, 5, 0.4);
+            background: var(--accent);
+        }
+        
+        .booking-page__social-link svg {
+            width: 24px;
+            height: 24px;
+            transition: fill 0.3s ease;
+        }
+
+        .booking-page__social-link svg path {
+        fill: var(--accent); 
+        }
+        
+        .booking-page__social-link:hover svg path {
+            fill: var(--dark-bg);
+        }
+        
+        .booking-page__form {
+            display: grid;
+            gap: 10px;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .contacts__input {
+            position: relative;
+            margin-bottom: 0;
+        }
+        
+        .contacts__input input {
+            width: 100%;
+            padding: 18px 20px;
+            background: var(--input-bg);
+            border: 2px solid var(--input-border);
+            border-radius: 12px;
+            color: var(--light-text);
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .contacts__input input:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(252, 218, 5, 0.2);
+        }
+        
+        .contacts__input label {
+            position: absolute;
+            left: 20px;
+            top: 18px;
+            color: #888;
+            font-size: 16px;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contacts__input input:focus + label,
+        .contacts__input input:not(:placeholder-shown) + label {
+            top: -12px;
+            left: 15px;
+            font-size: 14px;
+            background: var(--card-bg);
+            padding: 0 8px;
+            color: var(--accent);
+        }
+        
+        .contacts__textarea {
+            position: relative;
+            margin-bottom: 0;
+        }
+        
+        .contacts__textarea textarea {
+            width: 100%;
+            padding: 18px 20px;
+            background: var(--input-bg);
+            border: 2px solid var(--input-border);
+            border-radius: 12px;
+            color: var(--light-text);
+            font-size: 16px;
+            min-height: 120px;
+            resize: vertical;
+            transition: all 0.3s ease;
+        }
+        
+        .contacts__textarea textarea:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(252, 218, 5, 0.2);
+        }
+        
+        .contacts__textarea label {
+            position: absolute;
+            left: 20px;
+            top: 18px;
+            color: #888;
+            font-size: 16px;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contacts__textarea textarea:focus + label,
+        .contacts__textarea textarea:not(:placeholder-shown) + label {
+            top: -12px;
+            left: 15px;
+            font-size: 14px;
+            background: var(--card-bg);
+            padding: 0 8px;
+            color: var(--accent);
+        }
+        
+        .contacts__hint {
+            font-size: 13px;
+            color: #888;
+            margin-top: 8px;
+            margin-left: 5px;
+        }
+        
+        .contacts__checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 25px 0;
+            padding: 15px;
+            background: var(--input-bg);
+            border-radius: 12px;
+        }
+        
+        .contacts__checkbox input[type="checkbox"] {
+            margin-top: 3px;
+            accent-color: var(--accent);
+            transform: scale(1.2);
+        }
+        
+        .contacts__checkbox label {
+            color: var(--light-text);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .contacts__checkbox a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .contacts__checkbox a:hover {
+            color: var(--light-text);
+            text-decoration: underline;
+        }
+        
+        .button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--accent), var(--dark-accent));
+            border: none;
+            border-radius: 12px;
+            color: var(--dark-bg);
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(252, 218, 5, 0.4);
+        }
+        
+        .button:active {
+            transform: translateY(0);
+        }
+        
+        /* Анимации */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .booking-page__step {
+            animation: fadeIn 0.6s ease forwards;
+        }
+        
+        .booking-page__step:nth-child(1) { animation-delay: 0.1s; }
+        .booking-page__step:nth-child(2) { animation-delay: 0.2s; }
+        .booking-page__step:nth-child(3) { animation-delay: 0.3s; }
+        .booking-page__step:nth-child(4) { animation-delay: 0.4s; }
+        .booking-page__step:nth-child(5) { animation-delay: 0.5s; }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .booking-page {
+                padding: 20px 15px;
+            }
+            
+            .booking-page__title {
+                font-size: 2rem;
+            }
+            
+            .booking-page__step {
+                padding: 25px 25px 25px 70px;
+            }
+            
+            .booking-page__step-number {
+                left: 20px;
+                top: 20px;
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+            
+            .booking-page__form {
+                padding: 25px;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .booking-page__social-links {
+                gap: 15px;
+            }
+            
+            .booking-page__social-link {
+                width: 45px;
+                height: 45px;
+            }
+
+            .booking-page__header {
+            grid-template-columns: 1fr;
+            text-align: center;
+            gap: 15px;
+            }
+            
+            .booking-page__back {
+                justify-self: start;
+            }
+            
+            .booking-page__logo {
+                justify-self: center;
+            }
+            
+            .booking-page__title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .booking-page__step {
+                padding: 20px 20px 20px 60px;
+            }
+            
+            .booking-page__step-number {
+                left: 15px;
+                top: 15px;
+                width: 30px;
+                height: 30px;
+            }
+            
+            .booking-page__form {
+                padding: 20px;
+            }
+            
+            .contacts__input input,
+            .contacts__textarea textarea {
+                padding: 15px;
+            }
+        }
+        
+        /* Стили для валидации */
+        .contacts__input input:invalid,
+        .contacts__textarea textarea:invalid {
+            border-color: var(--input-border);
+        }
+        
+        .contacts__input input:valid,
+        .contacts__textarea textarea:valid {
+            border-color: var(--input-border);
+        }
+    </style>
+</head>
+<body>
+    <div class="booking-page">
+            <div class="booking-page__header">
+                <img src="/icons/yellow.svg" alt="VibeTour" class="booking-page__logo">
+                <h1 class="booking-page__title">Забронировать тур</h1>
+            </div>
+            <div class="booking-page__steps">
+                <div class="booking-page__step">
+                    <div class="booking-page__step-number">1</div>
+                    <div class="booking-page__step-content">
+                        <p class="booking-page__step-text">Получите подтверждение менеджера о наличии свободных мест в выбранном вами туре. Для этого свяжитесь с нами в WhatsApp, Telegram или VK.</p>
+                        <div class="booking-page__social-links">
+                            <a href="https://wa.me/79996993236?text=" target="_blank" class="booking-page__social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20">
+                                    <path fill="orange" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+                                </svg>
+                            </a>
+                            <a href="https://t.me/vibet0ur" target="_blank" class="booking-page__social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" width="20" height="20">
+                                    <path fill="orange" d="M248 8C111 8 0 119 0 256S111 504 248 504 496 393 496 256 385 8 248 8zM363 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7 .2-.7 .3-3.1-1.2-4.4s-3.6-.8-5.1-.5q-3.3 .7-104.6 69.1-14.8 10.2-26.9 9.9c-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3q.8-6.7 18.5-13.7 108.4-47.2 144.6-62.3c68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6 .5 9.6 2.9a10.5 10.5 0 0 1 3.5 6.7A43.8 43.8 0 0 1 363 176.7z"/>
+                                </svg>
+                            </a>
+                            <a href="https://vk.com/vbtour" target="_blank" class="booking-page__social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20">
+                                    <path fill="orange" d="M31.5 63.5C0 95 0 145.7 0 247V265C0 366.3 0 417 31.5 448.5C63 480 113.7 480 215 480H233C334.3 480 385 480 416.5 448.5C448 417 448 366.3 448 265V247C448 145.7 448 95 416.5 63.5C385 32 334.3 32 233 32H215C113.7 32 63 32 31.5 63.5zM75.6 168.3H126.7C128.4 253.8 166.1 290 196 297.4V168.3H244.2V242C273.7 238.8 304.6 205.2 315.1 168.3H363.3C359.3 187.4 351.5 205.6 340.2 221.6C328.9 237.6 314.5 251.1 297.7 261.2C316.4 270.5 332.9 283.6 346.1 299.8C359.4 315.9 369 334.6 374.5 354.7H321.4C316.6 337.3 306.6 321.6 292.9 309.8C279.1 297.9 262.2 290.4 244.2 288.1V354.7H238.4C136.3 354.7 78 284.7 75.6 168.3z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="booking-page__step">
+                    <div class="booking-page__step-number">2</div>
+                    <p class="booking-page__step-text">Отдельно для каждого участника заполните все обязательные поля формы, и нажмите "Забронировать тур". Предварительно ознакомьтесь с программой тура и условиями договора.</p>
+                </div>
+                <div class="booking-page__step">
+                    <div class="booking-page__step-number">3</div>
+                    <p class="booking-page__step-text">Менеджер вышлет ссылку на оплату. Осуществите оплату и отправьте копию квитанции. Бронирование осуществляется после получения предоплаты. Стандартный размер предоплаты составляет 30% от стоимости тура, но могут быть согласованы индивидуальные условия.</p>
+                </div>
+                <div class="booking-page__step">
+                    <div class="booking-page__step-number">4</div>
+                    <p class="booking-page__step-text">Оставшуюся часть стоимости тура необходимо оплатить при посадке.</p>
+                </div>
+                <div class="booking-page__step">
+                    <div class="booking-page__step-number">5</div>
+                    <p class="booking-page__step-text">Перед стартом тура добавим вас в общий чат. Познакомимся со всеми участниками, отправим много полезной информации и расскажем о правилах. На этом всё, с нетерпением ждем встречи в туре!</p>
+                </div>
+            </div>
+
+            <form action="#" class="booking-page__form" id="bookingForm">
+                <div class="contacts__input">
+                    <input name="name" id="name" type="text" required placeholder=" ">
+                    <label for="name">Ф.И.О.</label>
+                </div>
+                <div class="contacts__input">
+                    <input name="phone" inputmode="numeric" pattern="\d*"id="phone" type="tel" required placeholder=" ">
+                    <label for="phone">Ваш телефон</label>
+                </div>
+                <div class="contacts__input">
+                    <input name="email" id="email" type="email" placeholder=" ">
+                    <label for="email">Ваша почта (необязательно)</label>
+                </div>
+                <div class="contacts__input">
+                    <input name="birthdate" id="birthdate" type="text" required placeholder=" ">
+                    <label for="birthdate">Дата рождения</label>
+                </div>
+                <div class="contacts__input">
+                    <input name="passport" id="passport" type="text" required placeholder=" ">
+                    <label for="passport">Серия и номер паспорта</label>
+                    <p class="contacts__hint">или свидетельство о рождении, если это ребёнок до 14-ти лет</p>
+                </div>
+                <div class="contacts__input">
+                    <input name="trip" id="trip" type="text" required placeholder=" ">
+                    <label for="trip">Тур</label>
+                </div>
+                <!-- <div class="contacts__input">
+                    <input name="city" id="city" type="text" required placeholder=" ">
+                    <label for="city">Город выезда</label>
+                </div> -->
+                <div class="contacts__textarea">
+                    <textarea name="accommodation" id="accommodation" placeholder=" "></textarea>
+                    <label for="accommodation">Размещение/примечание</label>
+                    <p class="contacts__hint">раздельные или совместные кровати, с кем необходимо разместить</p>
+                </div>
+                <div class="contacts__checkbox">
+                    <input type="checkbox" id="agreement" name="agreement" required>
+                    <label for="agreement">Я согласен с <a href="offer.html" class="policy-link" target="_blank">договором-офертой</a> и даю согласие на обработку персональных данных*</label>
+                </div>
+                <button type="submit" class="button">Забронировать тур</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно успеха -->
+    <div id="successModal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+        <div class="modal-content" style="background: #1A1A1A; padding: 40px; border-radius: 20px; text-align: center; max-width: 400px; width: 90%; position: relative;">
+            <div style="margin-bottom: 30px;">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="24" fill="#FF6B00" fill-opacity="0.1"/>
+                    <path d="M32 16L20 28L16 24" stroke="#FF6B00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h3 style="margin-bottom: 20px; color: #fff; font-size: 24px; font-weight: 600;">Спасибо!</h3>
+            <p style="margin-bottom: 20px; color: #999; font-size: 16px; line-height: 1.5;">Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.</p>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Получаем параметры из URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const tripParam = urlParams.get('trip');
+        
+        // Если есть параметр trip, заполняем поле
+        if (tripParam) {
+            document.getElementById('trip').value = decodeURIComponent(tripParam);
+        }
+
+        document.getElementById('bookingForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Собираем данные из формы
+            const formData = {
+                name: document.getElementById('name').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                birthdate: document.getElementById('birthdate').value.trim(),
+                passport: document.getElementById('passport').value.trim(),
+                trip: document.getElementById('trip').value.trim(),
+                city: document.getElementById('city').value.trim(),
+                accommodation: document.getElementById('accommodation').value.trim(),
+                agreement: document.getElementById('agreement').checked
+            };
+
+            // Проверяем обязательные поля
+            if (!formData.name || !formData.phone || !formData.birthdate || !formData.passport || !formData.trip || !formData.city || !formData.agreement) {
+                alert('Пожалуйста, заполните все обязательные поля');
+                return;
+            }
+
+            try {
+                const response = await fetch('https://vbtour.ru/send_telegram.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const responseText = await response.text();
+                console.log('Server response:', responseText);
+
+                if (!responseText) {
+                    throw new Error('Пустой ответ от сервера');
+                }
+
+                let result;
+                try {
+                    result = JSON.parse(responseText);
+                } catch (e) {
+                    console.error('Failed to parse response:', e);
+                    throw new Error('Сервер вернул некорректный ответ');
+                }
+
+                if (result.success) {
+                    // Показываем модальное окно успеха
+                    const successModal = document.getElementById('successModal');
+                    successModal.style.display = 'flex';
+                    
+                    // Скрываем модальное окно через 3 секунды
+                    setTimeout(() => {
+                        successModal.style.display = 'none';
+                        // Очищаем форму
+                        this.reset();
+                        // Перенаправляем на главную
+                        window.location.href = '/';
+                    }, 3000);
+                } else {
+                    throw new Error(result.error || 'Произошла ошибка при отправке формы');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже или свяжитесь с нами напрямую.');
+            }
+        });
+    </script>
+</body>
+</html> 

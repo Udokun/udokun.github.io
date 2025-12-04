@@ -1,0 +1,15 @@
+.header {
+  background: $overlay-header-bg;
+  padding: 20px;
+  text-align: center;
+
+  &__title {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  &__tagline {
+    font-size: 1.2rem;
+    color: lighten($color-gray, 10%);
+  }
+}

@@ -1,0 +1,53 @@
+@import 'base/variables';
+@import 'blocks/header';
+@import 'blocks/main';
+@import 'blocks/footer';
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+body,
+h1, h2, h3, h4, h5, h6,
+p,
+button,
+input,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+button,
+input,
+textarea {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a:hover {
+  cursor: pointer;
+}
