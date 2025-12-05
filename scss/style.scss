@@ -1,53 +1,17 @@
-@import 'base/variables';
-@import 'blocks/header';
-@import 'blocks/main';
-@import 'blocks/footer';
-
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul,
-ol {
-  list-style: none;
-}
-
-body,
-h1, h2, h3, h4, h5, h6,
-p,
-button,
-input,
-textarea {
-  font-family: inherit;
-  font-size: 100%;
-  font-weight: normal;
-  line-height: 1.4;
-}
-
-button,
-input,
-textarea {
-  border: none;
-  background: none;
-  outline: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-a:hover {
-  cursor: pointer;
-}
+@import 'base/vars';
+@import 'base/reset';
+@import 'base/mixins';
+@import 'base/globals';
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/forms';
+@import 'components/header';
+@import 'section/benefits';
+@import 'section/booking';
+@import 'section/contact';
+@import 'section/footer';
+@import 'section/header';
+@import 'section/hero';
+@import 'section/modal';
+@import 'section/reviews';
+@import 'section/tours';

@@ -1,0 +1,70 @@
+.contact {
+  @include container;
+  padding: 100px 16px;
+  background: var(--bg-primary);
+  transition: background-color 0.3s ease;
+
+  &__form {
+    max-width: 700px;
+    margin: 60px auto 0;
+    display: grid;
+    gap: 24px;
+    background: var(--bg-card);
+    padding: 48px;
+    border-radius: $radius-lg;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 18px 24px;
+    border: 2px solid var(--border-color);
+    border-radius: $radius;
+    font-family: $font-main;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
+      transform: translateY(-2px);
+    }
+
+    &::placeholder {
+      color: var(--text-muted);
+    }
+  }
+
+  textarea {
+    min-height: 140px;
+    resize: vertical;
+    font-family: $font-main;
+  }
+}
+
+@include respond(tablet) {
+  .contact {
+    padding: 60px 16px;
+  }
+}
+
+@include respond(phone) {
+  .contact {
+    padding: 40px 16px;
+
+    &__form {
+      gap: 16px;
+    }
+
+    input,
+    textarea {
+      padding: 14px 18px;
+    }
+  }
+}

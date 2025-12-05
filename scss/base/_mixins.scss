@@ -1,0 +1,20 @@
+@mixin container {
+  max-width: $container;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin respond($size) {
+  @if $size == phone {
+    @media (max-width: 600px) { @content; }
+  }
+  @if $size == tablet {
+    @media (max-width: 900px) { @content; }
+  }
+}

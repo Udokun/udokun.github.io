@@ -1,0 +1,372 @@
+.tours {
+  @include container;
+  padding: 100px 16px;
+  background: var(--bg-primary);
+  transition: background-color 0.3s ease;
+
+  &__filters {
+    margin-bottom: 60px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 32px;
+    margin-top: 20px;
+  }
+}
+
+// Поиск
+.search-box {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto 30px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 14px 45px 14px 18px;
+  border: 2px solid var(--border-color);
+  border-radius: $radius;
+  font-family: $font-main;
+  font-size: 1rem;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
+  }
+
+  &::placeholder {
+    color: var(--text-muted);
+  }
+}
+
+.search-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+// Месяцы
+.month-filter {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.month-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-radius: $radius-lg;
+  box-shadow: var(--shadow);
+}
+
+.month-btn {
+  position: relative;
+  padding: 14px 24px;
+  border: 2px solid var(--border-color);
+  border-radius: $radius;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-family: $font-main;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  min-width: 100px;
+  text-align: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--accent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.2);
+
+    &::before {
+      opacity: 0.1;
+    }
+  }
+
+  &.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    transform: translateY(-2px);
+
+    &::before {
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.tour-dates {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: var(--bg-secondary);
+  border-radius: $radius-sm;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  svg {
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+}
+
+.tour-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+@include respond(tablet) {
+  .month-filter {
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .month-btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    min-width: 65px;
+  }
+}
+
+@include respond(phone) {
+  .tours__filter {
+    margin-bottom: 40px;
+  }
+
+  .month-filter {
+    gap: 8px;
+    padding: 12px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--bg-secondary);
+
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: var(--bg-secondary);
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 3px;
+    }
+  }
+
+  .month-btn {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    min-width: 60px;
+    flex-shrink: 0;
+  }
+}
+
+.tour-card {
+  background: var(--bg-card);
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  position: relative;
+
+  &:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent);
+
+    .tour-card__main-image {
+      transform: scale(1.1);
+    }
+
+    .card-body h3 {
+      color: var(--accent);
+    }
+
+    .tour-gallery-btn {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 240px;
+  }
+
+  &__main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+}
+
+.tour-gallery-btn {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  padding: 10px 16px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: $radius-sm;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(10px);
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  &:hover {
+    background: rgba(255, 107, 53, 0.9);
+    transform: translateY(0) scale(1.05);
+  }
+}
+
+  .card-body {
+    padding: 28px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    background: var(--bg-card);
+    transition: background-color 0.3s ease;
+
+    h3 {
+      margin: 0 0 12px;
+      font-size: 1.4rem;
+      color: var(--text-primary);
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .btn {
+      margin-top: auto;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+@include respond(tablet) {
+  .tours {
+    padding: 60px 16px;
+  }
+
+  .tours__grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .search-box {
+    max-width: 100%;
+  }
+}
+
+@include respond(phone) {
+  .tours {
+    padding: 40px 16px;
+  }
+
+  .tours__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tour-card {
+    .card-body {
+      padding: 20px;
+    }
+
+    img {
+      height: 180px;
+    }
+  }
+
+  .search-box {
+    margin-bottom: 24px;
+  }
+
+  .search-input {
+    padding: 12px 40px 12px 16px;
+    font-size: 0.95rem;
+  }
+
+  .month-filter {
+    gap: 8px;
+  }
+
+  .month-btn {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    min-width: 60px;
+  }
+}

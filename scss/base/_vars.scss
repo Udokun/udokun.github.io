@@ -1,0 +1,61 @@
+// ============================================
+// Цветовая система с поддержкой тем
+// ============================================
+
+// CSS переменные для тем (будут переопределяться)
+:root {
+  // Светлая тема (по умолчанию)
+  --accent: #ff6b35;              // Теплый оранжевый
+  --accent-hover: #e55a2b;        // Темнее при наведении
+  --accent-light: #ff8c66;       // Светлый оттенок
+  --accent-dark: #cc5529;        // Темный оттенок
+  
+  --text-primary: #1a1a1a;        // Основной текст
+  --text-secondary: #4a4a4a;     // Вторичный текст
+  --text-muted: #8a8a8a;         // Приглушенный текст
+  
+  --bg-primary: #ffffff;          // Основной фон
+  --bg-secondary: #f8f9fa;        // Вторичный фон
+  --bg-card: #ffffff;              // Фон карточек
+  --bg-overlay: rgba(0, 0, 0, 0.4); // Затемнение
+  
+  --border-color: #e0e0e0;        // Цвет границ
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-hover: 0 6px 25px rgba(255, 107, 53, 0.2);
+}
+
+[data-theme="dark"] {
+  // Темная тема
+  --accent: #ff8c66;              // Более светлый оранжевый для темной темы
+  --accent-hover: #ff6b35;        // Ярче при наведении
+  --accent-light: #ffaa88;        // Светлый оттенок
+  --accent-dark: #ff6b35;         // Темный оттенок
+  
+  --text-primary: #e8e8e8;        // Основной текст (светлый)
+  --text-secondary: #b8b8b8;      // Вторичный текст
+  --text-muted: #888888;          // Приглушенный текст
+  
+  --bg-primary: #1a1a1a;          // Основной фон (темный)
+  --bg-secondary: #252525;          // Вторичный фон
+  --bg-card: #2a2a2a;              // Фон карточек
+  --bg-overlay: rgba(0, 0, 0, 0.6); // Затемнение
+  
+  --border-color: #3a3a3a;        // Цвет границ
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 6px 25px rgba(255, 140, 102, 0.3);
+}
+
+// SCSS переменные для использования в миксинах
+$radius: 16px;
+$radius-lg: 24px;
+$radius-sm: 12px;
+
+$font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$container: 1200px;
+
+// Дополнительные цвета
+$success: #10b981;
+$warning: #f59e0b;
+$error: #ef4444;

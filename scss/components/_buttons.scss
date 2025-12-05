@@ -1,0 +1,49 @@
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: $radius;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border: none;
+
+  &--primary {
+    background: var(--accent);
+    color: white;
+    box-shadow: var(--shadow);
+    position: relative;
+
+    span {
+      position: relative;
+      z-index: 1;
+    }
+
+    &:hover {
+      background: var(--accent-hover);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
+
+  &--small {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  // Эффект свечения
+  &--glow {
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.4), var(--shadow);
+
+    &:hover {
+      box-shadow: 0 0 30px rgba(255, 107, 53, 0.6), var(--shadow-hover);
+    }
+  }
+}
