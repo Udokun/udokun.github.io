@@ -19,10 +19,4 @@
     background: var(--accent);
     opacity: 0.3;
   }
-
-  @include respond(phone) {
-    padding: 40px 16px;
-    margin-top: 80px;
-    font-size: 0.9rem;
-  }
 }

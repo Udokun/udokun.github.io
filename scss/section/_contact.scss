@@ -23,7 +23,6 @@
     padding: 18px 24px;
     border: 2px solid var(--border-color);
     border-radius: $radius;
-    font-family: $font-main;
     font-size: 1rem;
     transition: all 0.3s ease;
     background: var(--bg-primary);
@@ -44,27 +43,5 @@
   textarea {
     min-height: 140px;
     resize: vertical;
-    font-family: $font-main;
-  }
-}
-
-@include respond(tablet) {
-  .contact {
-    padding: 60px 16px;
-  }
-}
-
-@include respond(phone) {
-  .contact {
-    padding: 40px 16px;
-
-    &__form {
-      gap: 16px;
-    }
-
-    input,
-    textarea {
-      padding: 14px 18px;
-    }
   }
 }

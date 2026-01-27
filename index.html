@@ -22,9 +22,6 @@
 	<meta property="twitter:description" content="Незабываемые приключения рядом с городом.">
 	<meta property="twitter:image" content="https://vbtour.ru/img/hero.jpg">
 	
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.min.css">
 	
 	<!-- Structured Data (Schema.org) -->
@@ -51,14 +48,14 @@
 </head>
 <body>
 	<header class="header">
-	<div class="header__inner">
-		<a href="/" class="logo">Vibe Tour</a>
+		<div class="header__inner">
+		<a href="/" class="header__logo"><img src="/icons/dark.svg" alt="Лого"></a>
 
-		<nav class="nav">
-		<a href="#tours">Туры</a>
-		<a href="#benefits">Почему мы</a>
-		<a href="#reviews">Отзывы</a>
-		<a href="#contact">Контакты</a>
+		<nav class="header__nav">
+			<a href="#tours">Туры</a>
+			<a href="#benefits">Почему мы</a>
+			<a href="#reviews">Отзывы</a>
+			<a href="#contact">Контакты</a>
 		</nav>
 
 		<div style="display: flex; align-items: center; gap: 12px;">
@@ -70,63 +67,64 @@
 			</button>
 			<a href="booking.html" class="btn btn--small btn--primary"><span>Бронь</span></a>
 		</div>
-	</div>
+		</div>
 	</header>
 
 	<section class="hero">
-	<div class="hero__content container">
-		<h1>Туры выходного дня, которые дарят эмоции</h1>
-		<p>Небольшие путешествия рядом с городом, чтобы сменить рутину и вдохнуть жизнь полной грудью.</p>
-		<a href="#tours" class="btn btn--primary btn--glow"><span>Выбрать тур</span></a>
-	</div>
+		<div class="hero__content">
+			<h1>Туры выходного дня, которые дарят эмоции</h1>
+			<p>Небольшие путешествия рядом с городом, чтобы сменить рутину и вдохнуть жизнь полной грудью.</p>
+			<a href="#tours" class="btn btn--primary btn--glow"><span>Выбрать тур</span></a>
+		</div>
 	</section>
 
-	<section id="benefits" class="benefits">
-	<h2 class="section-title">Почему выбирают нас</h2>
+	<section id="quality" class="quality">
+		<h2 class="section-title">Почему выбирают нас</h2>
 
-	<div class="benefits__grid">
-		<div class="benefit-card">
-		<img src="images/icons/map.svg" alt="">
-		<h3>Уникальные маршруты</h3>
-		<p>Маршруты, подобранные гидом с 10-летним опытом.</p>
-		</div>
+		<div class="quality__grid">
+			<div class="quality-card">
+				<img src="/icons/map.svg" alt="Карта">
+				<h3>Уникальные маршруты</h3>
+				<p>Маршруты, подобранные гидом с 10-летним опытом.</p>
+			</div>
 
-		<div class="benefit-card">
-		<img src="images/icons/smile.svg" alt="">
-		<h3>Небольшие группы</h3>
-		<p>Мы создаём ламповую атмосферу и комфорт.</p>
-		</div>
 
-		<div class="benefit-card">
-		<img src="images/icons/star.svg" alt="">
-		<h3>Фотографии на память</h3>
-		<p>Профессиональная съёмка на каждом туре.</p>
+			<div class="quality-card">
+				<img src="/icons/group.svg" alt="Группа">
+				<h3>Небольшие группы</h3>
+				<p>Мы создаём ламповую атмосферу и комфорт.</p>
+			</div>
+
+			<div class="quality-card">
+				<img src="/icons/photo.svg" alt="Фото">
+				<h3>Фотографии на память</h3>
+				<p>Профессиональная съёмка на каждом туре.</p>
+			</div>
 		</div>
-	</div>
 	</section>
 
 	<section id="tours" class="tours">
-	<h2 class="section-title">Популярные туры</h2>
-	
-	<div class="tours__filters">
-		<!-- Поиск -->
-		<div class="search-box">
-			<input type="text" id="tourSearch" class="search-input" placeholder="Поиск туров...">
-			<svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-				<circle cx="11" cy="11" r="8"></circle>
-				<path d="m21 21-4.35-4.35"></path>
-			</svg>
-		</div>
+		<h2 class="section-title">Популярные туры</h2>
+		
+		<div class="tours__filters">
+			<!-- Поиск -->
+			<div class="search-box">
+				<input type="text" id="tourSearch" class="search-input" placeholder="Поиск туров...">
+				<svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<circle cx="11" cy="11" r="8"></circle>
+					<path d="m21 21-4.35-4.35"></path>
+				</svg>
+			</div>
 
-		<!-- Месяцы (текущий + 2 месяца вперед) -->
-		<div class="month-filter" id="monthFilter">
-			<!-- Месяцы будут добавлены через JavaScript -->
+			<!-- Месяцы (текущий + 2 месяца вперед) -->
+			<div class="month-filter" id="monthFilter">
+				<!-- Месяцы будут добавлены через JavaScript -->
+			</div>
 		</div>
-	</div>
-	
-	<div id="tour-list" class="tours__grid">
-		<!-- карточки подставит JS -->
-	</div>
+		
+		<div id="tour-list" class="tours__grid">
+			<!-- карточки подставит JS -->
+		</div>
 	</section>
 
 	<section id="reviews" class="reviews">
@@ -134,14 +132,14 @@
 		<h2 class="section-title">Отзывы</h2>
 
 		<div class="reviews__grid">
-		<div class="review-card">
-			<p>«Лучший тур в моей жизни! Море эмоций, атмосфера — топ!»</p>
-			<span>— Анна</span>
-		</div>
-		<div class="review-card">
-			<p>«Очень комфортно, уютно и по-домашнему. Рекомендую!»</p>
-			<span>— Дмитрий</span>
-		</div>
+			<div class="review-card">
+				<p>«Лучший тур в моей жизни! Море эмоций, атмосфера — топ!»</p>
+				<span>— Анна</span>
+			</div>
+			<div class="review-card">
+				<p>«Очень комфортно, уютно и по-домашнему. Рекомендую!»</p>
+				<span>— Дмитрий</span>
+			</div>
 		</div>
 	</div>
 	</section>
@@ -153,7 +151,6 @@
 		<input type="text" placeholder="Ваше имя" required>
 		<input type="tel" placeholder="Телефон" required>
 		<textarea placeholder="Ваш вопрос" required></textarea>
-
 		<button type="submit" class="btn btn--primary"><span>Отправить</span></button>
 	</form>
 	</section>
