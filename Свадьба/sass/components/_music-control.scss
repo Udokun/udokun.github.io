@@ -1,0 +1,69 @@
+@use '../variables' as *;
+
+.music-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+
+    .music-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255,255,255,0.8);
+        border: none;
+        border-radius: 999px;
+        padding: 0 20px;
+        height: 40px;
+        min-width: 120px;
+        cursor: pointer;
+        transition: all 0.5s cubic-bezier(0.77,0,0.18,1);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        overflow: hidden;
+
+        .music-hint {
+            display: inline-block;
+            white-space: nowrap;
+            color: #333;
+            font-size: 1rem;
+            margin-right: 10px;
+            opacity: 1;
+            max-width: 200px;
+            transition: all 0.5s cubic-bezier(0.77,0,0.18,1);
+            overflow: hidden;
+        }
+
+        i {
+            font-size: 1.2rem;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        &.hint-hidden {
+            padding: 0;
+            width: 40px;
+            min-width: 0;
+            border-radius: 50%;
+
+            .music-hint {
+                opacity: 0;
+                max-width: 0;
+                margin-right: 0;
+                pointer-events: none;
+            }
+        }
+
+        &.playing {
+            animation: rotate 3s linear infinite;
+        }
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

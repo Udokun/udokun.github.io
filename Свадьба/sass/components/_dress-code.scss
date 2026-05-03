@@ -1,0 +1,310 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.dress-code {
+    padding: 80px 0;
+    background: #f8f0ea;
+    position: relative;
+
+    .container {
+        max-width: 800px;
+        position: relative;
+        z-index: 2;
+        padding-bottom: 200px;
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            font-weight: normal;
+            color: #776d65;
+        }
+
+        .dress-code-intro {
+            text-align: center;
+            font-style: italic;
+            color: #776d65;
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
+            font-size: 1.5rem;
+        }
+
+        .color-palettes {
+            margin-bottom: 3rem;
+    
+            .palette-title {
+                margin: 0 10px 20px 10px;
+                color: #776d65;
+                font-size: 1.5rem;
+    
+                img {
+                    margin-right: 5px;
+                }
+            }
+
+            .forbidden-colors {
+                margin-bottom: 3rem;
+
+                .forbidden-colors-grid {
+                    display: grid;
+                    grid-template-columns: repeat(6, 40px);
+                    gap: 1rem;
+                    justify-content: center;
+                    margin-bottom: 2.5rem;
+                    padding: 0 0.5rem;
+        
+                    .color-circle {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        border: 2px solid #cab19d;
+        
+                        &.yellow { background-color: gold; }
+                        &.green { background-color: green; }
+                        &.blue { background-color: blue; }
+                        &.red { background-color: red; }
+                        &.white { background-color: #fff; }
+                        &.black { background-color: #000; }
+                    }
+                }
+            }
+
+
+            .colors-grid {
+                display: grid;
+                grid-template-columns: repeat(13, 40px);
+                gap: 1rem;
+                justify-content: center;
+                padding: 0 0.5rem;
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+                padding: 20px 0;
+    
+                .color-circle {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    border: 2px solid #cab19d;
+    
+                    &.pastel-1 { background-color: #f6f4f2; }
+                    &.pastel-2 { background-color: #f9fbd3; }
+                    &.pastel-3 { background-color: #e9f6eb; }
+                    &.pastel-4 { background-color: #d2ebd1; }
+                    &.pastel-5 { background-color: #cad46c; }
+                    &.pastel-6 { background-color: #a8ac5d; }
+                    &.pastel-7 { background-color: #b1b896; }
+                    &.pastel-8 { background-color: #8f8f8f; }
+                    &.pastel-9 { background-color: #cfc6c4; }
+                    &.pastel-10 { background-color: #b994a3; }
+                    &.pastel-11 { background-color: #5c566d; }
+                    &.pastel-12 { background-color: #65414d; }
+                    &.pastel-13 { background-color: #713353; }
+                    &.pastel-14 { background-color: #e2d9c8; }
+                    &.pastel-15 { background-color: #c2d5dd; }
+                    &.pastel-16 { background-color: #e4d4d5; }
+                    &.pastel-17 { background-color: #f6decd; }
+                    &.pastel-18 { background-color: #efbd89; }
+                    &.pastel-19 { background-color: #f5a66c; }
+                    &.pastel-20 { background-color: #edc1da; }
+                    &.pastel-21 { background-color: #b994a5; }
+                    &.pastel-22 { background-color: #a89696; }
+                    &.pastel-23 { background-color: #82523b; }
+                    &.pastel-24 { background-color: #ac6f5b; }
+                    &.pastel-25 { background-color: #808276; }
+                    &.pastel-26 { background-color: #907b67; }
+                }
+            }
+        }
+
+        .example-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 1200px;
+            margin: -30px auto 0;
+            padding: 0 20px;
+            gap: 0;
+            position: relative;
+        
+            .image-wrapper {
+                position: relative;
+                width: 100%;
+                padding-bottom: 140%;
+                border-radius: 9999px;
+                overflow: hidden;
+                margin: -20px -10px;
+                transition: transform 0.3s ease;
+                z-index: 1;
+                border: 3px solid #c7b09d;
+
+                &_one {
+                    top: 35%;
+                    left: 5%;
+                    z-index: 3;
+                }
+
+                &_two {
+                    z-index: 2;
+                }
+
+                &_three {
+                    top: 35%;
+                    right: 5%;
+                    z-index: 1;
+                }
+
+                &_four {
+                    top: 50%;
+                    left: 5%;
+                    z-index: 1;
+                }
+
+                &_five {
+                    top: 15%;
+                    z-index: 1;
+                }
+
+                &_six {
+                    top: 50%;
+                    right: 5%;
+                    z-index: 1;
+                }
+        
+                &:hover,
+                &:focus,
+                &:active {
+                    transform: scale(1.02);
+                    z-index: 2;
+
+                    &.image-wrapper_one {
+                        z-index: 4;
+                    }
+                    &.image-wrapper_two {
+                        z-index: 4;
+                    }
+                }
+        
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    -o-object-fit: cover;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .dress-code {
+        .color-palettes {
+            .colors-grid-wrapper {
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: thin;
+                scrollbar-color: #cab19d #f8f0ea;
+                padding: 0 8px 10px 8px;
+                z-index: 2;
+                position: relative;
+                margin-bottom: 3.5rem;
+            }
+            .colors-grid {
+                display: flex;
+                gap: 0.5rem;
+                min-width: max-content;
+            }
+            .color-circle {
+                width: 24px;
+                height: 24px;
+                flex: 0 0 24px;
+            }
+            .forbidden-colors-grid {
+                grid-template-columns: repeat(6, 34px) !important;
+                gap: 0.8rem !important;
+                padding: 0 8px !important;
+            }
+            .forbidden-colors-grid .color-circle {
+                width: 34px !important;
+                height: 34px !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .example-images {
+        padding: 0 10px;
+        margin: -15px auto 0;
+
+        .image-wrapper {
+            margin: -10px -5px;
+            padding-bottom: 160%;
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+    .dress-code {
+        .container {
+            padding-bottom: 80px;
+            
+            .example-images {
+                gap: 0.8rem;
+    
+                .image-wrapper {
+                    &_one {
+                        left: 25%;
+                    }
+
+                    &_three {
+                        right: 25%;
+                    }
+
+                    &_four {
+                        top: 75%;
+                        left: 25%;
+                    }
+
+                    &_five {
+                        top: 50%;
+                    }
+
+                    &_six {
+                        top: 75%;
+                        right: 25%;
+                    }
+                }
+            }
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .dress-code-intro {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            padding: 0 20px;
+        }
+
+        .color-palettes {
+            .color-circle {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .palette-title {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+
+

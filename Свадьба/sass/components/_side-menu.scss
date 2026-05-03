@@ -1,0 +1,121 @@
+@use '../variables' as *;
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 9998;
+    transition: left 0.3s ease-out;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+}
+.side-menu.open {
+    left: 0;
+}
+.side-menu .menu-content {
+    padding: 60px 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.side-menu .menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+}
+.side-menu .menu-nav {
+    margin-top: 30px;
+}
+.side-menu .menu-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.side-menu .menu-nav li {
+    margin-bottom: 20px;
+}
+.side-menu .menu-nav a {
+    font-size: 1.5rem;
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: color 0.2s;
+}
+.side-menu .menu-nav a:hover {
+    color: #888;
+}
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-20px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+}
+
+.burger-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 10000;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  padding: 0;
+
+  &:hover, &:focus {
+    outline: none;
+  }
+
+  .burger-line {
+    width: 22px;
+    height: 3px;
+    background: rgba(0,0,0,0.5);
+    margin: 3px 0;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+}
+
+body:not(.content-visible) .burger-btn {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .burger-btn {
+    width: 40px;
+    height: 40px;
+    top: 20px;
+    left: 20px;
+    .burger-line { width: 22px; }
+  }
+}
+
+@media (min-width: 1024px) {
+  .side-menu {
+    width: 340px;
+  }
+}

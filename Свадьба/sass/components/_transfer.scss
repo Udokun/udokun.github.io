@@ -1,0 +1,313 @@
+@use '../variables' as *;
+
+.transfer {
+    position: relative;
+    padding: 80px 0;
+    background: #776d64;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 130px;
+        height: 130px;
+        top: 15%;
+        left: 75%;
+        border-radius: 50%;
+        background-color: #fff;
+        opacity: 0.07;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 170px;
+        height: 170px;
+        top: 70%;
+        left: 15%;
+        border-radius: 50%;
+        background-color: #fff;
+        opacity: 0.05;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .circle-1 {
+        content: "";
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        top: 40%;
+        left: 85%;
+        border-radius: 50%;
+        background-color: #fff;
+        opacity: 0.06;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .circle-2 {
+        content: "";
+        position: absolute;
+        width: 110px;
+        height: 110px;
+        top: 85%;
+        left: 25%;
+        border-radius: 50%;
+        background-color: #fff;
+        opacity: 0.08;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .circle-3 {
+        content: "";
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        top: 35%;
+        left: 45%;
+        border-radius: 50%;
+        background-color: #fff;
+        opacity: 0.04;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 60px;
+        font-weight: normal;
+    }
+
+    p {
+        text-align: center;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 2;
+        font-size: 1.5rem;
+    }
+
+    p.location-address {
+        font-size: 2rem;
+        margin: 1.5rem 0;
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        padding: 60px 0;
+
+        &::before {
+            width: 90px;
+            height: 90px;
+            top: 10%;
+            left: 70%;
+        }
+
+        &::after {
+            width: 120px;
+            height: 120px;
+            top: 75%;
+            left: 10%;
+        }
+
+        .circle-1 {
+            width: 60px;
+            height: 60px;
+            top: 35%;
+            left: 80%;
+        }
+
+        .circle-2 {
+            width: 80px;
+            height: 80px;
+            top: 90%;
+            left: 20%;
+        }
+
+        .circle-3 {
+            width: 100px;
+            height: 100px;
+            top: 30%;
+            left: 40%;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        p {
+            font-size: 1.25rem;
+        }
+
+        p.location-address {
+            font-size: 1.75rem;
+        }
+    }
+}
+
+.car-animation-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative;
+    height: 80px;
+
+    .road {
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .car {
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        width: 60px;
+        height: 60px;
+        animation: carMove 6s linear infinite;
+
+        img {
+            width: 100%;
+            height: 100%;
+            animation: flipBus 6s linear infinite;
+            filter: brightness(0) invert(1);
+        }
+
+        .car-body {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #f44;
+            border-radius: 5px;
+        }
+
+        .car-top {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 20px;
+            background: #f44;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .car-window {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 25px;
+            height: 15px;
+            background: #fff;
+            border-radius: 3px;
+        }
+
+        .car-wheel {
+            position: absolute;
+            bottom: -5px;
+            width: 15px;
+            height: 15px;
+            background: #333;
+            border-radius: 50%;
+            animation: wheelRotate 1s linear infinite;
+
+            &.wheel1 {
+                left: 5px;
+            }
+
+            &.wheel2 {
+                right: 5px;
+            }
+        }
+
+        .car-headlight {
+            position: absolute;
+            top: 5px;
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+
+            &.headlight1 {
+                left: 5px;
+            }
+
+            &.headlight2 {
+                right: 5px;
+            }
+        }
+    }
+}
+
+@keyframes carMove {
+    0% {
+        left: -60px;
+    }
+    45% {
+        left: calc(100% + 60px);
+    }
+    50% {
+        left: calc(100% + 60px);
+    }
+    95% {
+        left: -60px;
+    }
+    100% {
+        left: -60px;
+    }
+}
+
+@keyframes wheelRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes roadLines {
+    from {
+        transform: translateY(-50%) translateX(0);
+    }
+    to {
+        transform: translateY(-50%) translateX(-100%);
+    }
+}
+
+@keyframes flipBus {
+    0% {
+        transform: scaleX(1);
+    }
+    45% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(-1);
+    }
+    95% {
+        transform: scaleX(-1);
+    }
+    100% {
+        transform: scaleX(-1);
+    }
+}

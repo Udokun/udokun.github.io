@@ -1,0 +1,277 @@
+@use 'variables' as *;
+@use 'sass:color';
+
+/// Миксин для медиа-запросов
+/// @param {String} $breakpoint - Брейкпоинт ('mobile', 'tablet', 'desktop')
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == "mobile" {
+        @media (max-width: map-get($breakpoints, 'mobile')) { @content; }
+    }
+    @else if $breakpoint == "tablet" {
+        @media (min-width: map-get($breakpoints, 'mobile')) and (max-width: map-get($breakpoints, 'tablet')) { @content; }
+    }
+    @else if $breakpoint == "desktop" {
+        @media (min-width: map-get($breakpoints, 'desktop')) { @content; }
+    }
+}
+
+/// Миксин для центрирования элементов
+/// @param {String} $type - Тип центрирования ('absolute' или 'flex')
+@mixin center($type: 'absolute') {
+    @if $type == 'absolute' {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    } @else if $type == 'flex' {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/// Миксин для плавных переходов
+/// @param {String} $properties - Свойства для анимации
+@mixin transition($properties: all) {
+    transition: $properties map-get($transitions, 'base');
+}
+
+/// Миксин для теней текста
+@mixin text-shadow {
+    text-shadow: map-get($shadows, 'text');
+}
+
+/// Миксин для теней блоков
+@mixin box-shadow {
+    box-shadow: map-get($shadows, 'box');
+}
+
+/// Миксин для контейнера
+@mixin container {
+    max-width: map-get($sizes, 'container-width');
+    margin: 0 auto;
+    padding: 0 map-get($sizes, 'container-padding');
+
+    @include respond-to('mobile') {
+        padding: 0 15px;
+    }
+}
+
+/// Миксин для декоративных элементов
+/// @param {String} $type - Тип декоративного элемента
+/// @param {Map} $options - Опции для элемента
+@mixin decorative($type, $options: ()) {
+    @if $type == 'circle' {
+        position: absolute;
+        border-radius: 50%;
+        background-color: map-get($options, 'color') or map-get($colors, 'white');
+        opacity: map-get($options, 'opacity') or map-get($decorative, 'circle-opacity');
+        width: map-get($options, 'size');
+        height: map-get($options, 'size');
+        top: map-get($options, 'top');
+        left: map-get($options, 'left');
+        pointer-events: none;
+        z-index: map-get($z-indexes, 'base');
+
+        @include respond-to('mobile') {
+            opacity: map-get($decorative, 'circle-opacity-mobile');
+        }
+    }
+}
+
+/// Миксин для секций с декоративными элементами
+@mixin decorative-section {
+    position: relative;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        background-color: map-get($colors, 'white');
+        opacity: map-get($decorative, 'circle-opacity');
+        pointer-events: none;
+        z-index: map-get($z-indexes, 'base');
+    }
+
+    @include respond-to('mobile') {
+        &::before,
+        &::after {
+            opacity: map-get($decorative, 'circle-opacity-mobile');
+        }
+    }
+}
+
+/// Миксин для адаптивного текста
+/// @param {Number} $min-size - Минимальный размер шрифта
+/// @param {Number} $max-size - Максимальный размер шрифта
+@mixin responsive-text($min-size, $max-size) {
+    font-size: clamp($min-size, calc(1rem + ((1vw - 3.2px) * 1.5)), $max-size);
+    -webkit-font-size: clamp($min-size, calc(1rem + ((1vw - 3.2px) * 1.5)), $max-size);
+}
+
+/// Миксин для flexbox
+/// @param {String} $direction - Направление flex-контейнера
+/// @param {String} $justify - Выравнивание по главной оси
+/// @param {String} $align - Выравнивание по поперечной оси
+/// @param {String} $wrap - Перенос элементов
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: $direction;
+    -webkit-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+    -webkit-box-pack: $justify;
+    -webkit-justify-content: $justify;
+    -ms-flex-pack: $justify;
+    justify-content: $justify;
+    -webkit-box-align: $align;
+    -webkit-align-items: $align;
+    -ms-flex-align: $align;
+    align-items: $align;
+    -webkit-flex-wrap: $wrap;
+    -ms-flex-wrap: $wrap;
+    flex-wrap: $wrap;
+}
+
+/// Миксин для форм
+/// @param {String} $bg - Цвет фона
+/// @param {String} $text - Цвет текста
+@mixin form-input($bg: map-get(map-get($colors, 'forms'), 'input-bg'), $text: map-get(map-get($colors, 'forms'), 'input-text')) {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 2rem;
+    background: $bg;
+    color: $text;
+    font-family: map-get($fonts, 'base');
+    font-size: map-get($fonts, 'size-base');
+    @include transition;
+
+    &::placeholder {
+        color: rgba($text, 0.6);
+        font-style: italic;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px map-get(map-get($colors, 'forms'), 'input-focus');
+    }
+
+    &:invalid {
+        border-color: map-get(map-get($colors, 'forms'), 'input-error');
+    }
+}
+
+// Флекс-центрирование
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Абсолютное позиционирование
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// Миксин для создания декоративного круга
+@mixin decorative-circle($size, $top, $left, $color: $white, $opacity: 0.05) {
+    position: absolute;
+    width: $size;
+    height: $size;
+    top: $top;
+    left: $left;
+    border-radius: 50%;
+    background-color: $color;
+    opacity: $opacity;
+    pointer-events: none;
+    z-index: 1;
+
+    @include respond-to('mobile') {
+        opacity: $opacity * 0.6;
+    }
+}
+
+// Базовый миксин для секций с кружочками
+@mixin circle-section {
+  position: relative;
+  overflow: hidden;
+}
+
+// Миксин для создания кружочка
+@mixin create-circle($size, $top, $left, $color, $opacity) {
+  position: absolute;
+  width: $size;
+  height: $size;
+  top: $top;
+  left: $left;
+  border-radius: 50%;
+  background-color: $color;
+  opacity: $opacity;
+  pointer-events: none;
+  z-index: 1;
+}
+
+// Миксин для декоративных кругов
+@mixin decorative-circle($size, $color, $opacity: 0.1) {
+    width: $size;
+    height: $size;
+    background: rgba($color, $opacity);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 0;
+}
+
+// Миксин для плавных переходов
+@mixin smooth-transition($properties...) {
+    -webkit-transition: $properties 0.3s ease-in-out;
+    -moz-transition: $properties 0.3s ease-in-out;
+    -o-transition: $properties 0.3s ease-in-out;
+    transition: $properties 0.3s ease-in-out;
+}
+
+// Миксин для медиа-запросов
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+// Миксин для адаптивного текста
+@mixin responsive-text($min-size, $max-size) {
+    font-size: clamp($min-size, calc(1rem + ((1vw - 3.2px) * 1.5)), $max-size);
+    -webkit-font-size: clamp($min-size, calc(1rem + ((1vw - 3.2px) * 1.5)), $max-size);
+}
+
+// Миксин для flexbox
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: $direction;
+    -webkit-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+    -webkit-box-pack: $justify;
+    -webkit-justify-content: $justify;
+    -ms-flex-pack: $justify;
+    justify-content: $justify;
+    -webkit-box-align: $align;
+    -webkit-align-items: $align;
+    -ms-flex-align: $align;
+    align-items: $align;
+    -webkit-flex-wrap: $wrap;
+    -ms-flex-wrap: $wrap;
+    flex-wrap: $wrap;
+} 
