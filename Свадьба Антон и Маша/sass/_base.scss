@@ -1,0 +1,106 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'victorian' as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: map-get($fonts, "base");
+  font-weight: 400;
+  line-height: map-get($fonts, "line-height-base");
+  color: $text-muted;
+  background-color: $bg-deep;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: map-get($sizes, "container-width");
+  margin: 0 auto;
+  padding: 0 map-get($sizes, "container-padding");
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: map-get($fonts, "heading");
+  margin-bottom: 20px;
+  line-height: 1.3;
+  font-weight: 500;
+  color: $text;
+}
+
+h2 {
+  text-align: center;
+  font-size: clamp(1.65rem, 4vw, 2.35rem);
+  margin-bottom: 40px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+p {
+  margin-bottom: 20px;
+  color: $text-muted;
+  font-size: 1.0625rem;
+}
+
+a {
+  color: $gold;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: map-get($transitions, "base");
+
+  &:hover {
+    color: $gold-light;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $gold;
+    outline-offset: 3px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  h2 {
+    margin-bottom: 32px;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,11 @@
+<svg width="78" height="70" viewBox="0 0 78 70" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="4" dy="4" stdDeviation="3" flood-color="black" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Кольца с белой обводкой и тенью -->
+  <circle cx="27" cy="43" r="22" fill="none" stroke="#FFFFFF" stroke-width="5" filter="url(#shadow)"/>
+  <circle cx="51" cy="27" r="22" fill="none" stroke="#FFFFFF" stroke-width="5" filter="url(#shadow)"/>
+</svg>

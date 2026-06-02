@@ -1,0 +1,88 @@
+@use '../variables' as *;
+@use '../victorian' as *;
+
+.location {
+    padding: 88px 0;
+    background: {
+        color: $bg-deep;
+        image: url("../img/res.webp");
+        size: cover;
+        position: center;
+        repeat: no-repeat;
+        attachment: fixed;
+    }
+    color: $text;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: map-get(map-get($colors, "location"), "overlay");
+        z-index: 1;
+    }
+
+    .container {
+        max-width: min(800px, 92vw);
+        margin: 0 auto;
+        padding: 0 28px;
+        position: relative;
+        z-index: 2;
+    }
+
+    h2 {
+        @include victorian-heading-light;
+        @include victorian-rule;
+        margin-bottom: 28px;
+    }
+
+    .location {
+        &-description {
+            text-align: center;
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+            color: $text-muted;
+        }
+
+        &-address {
+            text-align: center;
+            font-family: map-get($fonts, "display");
+            font-size: 1.65rem;
+            color: $text;
+            margin-bottom: 6px;
+        }
+
+        &-name {
+            text-align: center;
+            font-family: map-get($fonts, "heading");
+            font-size: 0.75rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+            color: $gold;
+        }
+    }
+
+    .map-container {
+        width: 100%;
+        max-width: 720px;
+        height: 380px;
+        margin: 0 auto;
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+        z-index: 2;
+        box-shadow: map-get($shadows, "box");
+        border: 1px solid rgba($gold, 0.35);
+        outline: 1px solid rgba($gold, 0.1);
+        outline-offset: 4px;
+    }
+
+    @media (max-width: 768px) {
+        background-attachment: scroll;
+
+        .map-container {
+            height: 280px;
+        }
+    }
+}

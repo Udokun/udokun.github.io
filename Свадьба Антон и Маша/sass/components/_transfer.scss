@@ -1,0 +1,106 @@
+@use '../variables' as *;
+@use '../victorian' as *;
+
+.transfer {
+    position: relative;
+    padding: map-get($sizes, "section-padding");
+    @include surface-elevated;
+    overflow: hidden;
+
+    .container {
+        position: relative;
+        z-index: 2;
+        max-width: map-get($sizes, "container-width");
+        margin: 0 auto;
+    }
+
+    h2 {
+        @include victorian-heading;
+        @include victorian-ornament;
+        @include victorian-rule;
+        margin-bottom: 40px;
+    }
+
+    p {
+        text-align: center;
+        line-height: 1.8;
+        color: $text-muted;
+        font-size: 1.05rem;
+    }
+
+    p.location-address {
+        font-family: map-get($fonts, "display");
+        font-size: 1.35rem;
+        @include gold-text;
+        text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+        padding: 72px 0;
+    }
+}
+
+.car-animation-container {
+    width: 100%;
+    max-width: 480px;
+    margin: 32px auto;
+    overflow: hidden;
+    position: relative;
+    height: 64px;
+
+    .road {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba($gold, 0.4), transparent);
+        position: absolute;
+        bottom: 6px;
+        left: 0;
+    }
+
+    .car {
+        position: absolute;
+        bottom: 8px;
+        left: 0;
+        width: 48px;
+        height: 48px;
+        animation: carMove 8s ease-in-out infinite;
+
+        img {
+            width: 100%;
+            height: 100%;
+            animation: flipBus 8s ease-in-out infinite;
+            filter: brightness(0) saturate(100%) invert(78%) sepia(28%)
+                saturate(600%) hue-rotate(5deg);
+            opacity: 0.9;
+        }
+    }
+}
+
+@keyframes carMove {
+    0% {
+        left: -48px;
+    }
+    45% {
+        left: calc(100% + 48px);
+    }
+    50% {
+        left: calc(100% + 48px);
+    }
+    95% {
+        left: -48px;
+    }
+    100% {
+        left: -48px;
+    }
+}
+
+@keyframes flipBus {
+    0%,
+    45% {
+        transform: scaleX(1);
+    }
+    50%,
+    100% {
+        transform: scaleX(-1);
+    }
+}

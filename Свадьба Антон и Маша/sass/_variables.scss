@@ -1,0 +1,216 @@
+// Victorian dark luxury — design tokens (variant #2)
+
+$bg-deep: #0f0e0d;
+$bg: #1a1512;
+$bg-elevated: #242019;
+$bg-card: #2a2420;
+
+$text: #f5ede3;
+$text-muted: rgba(245, 237, 227, 0.72);
+$gold: #c9a962;
+$gold-light: #e0c989;
+$gold-dark: #9a7d3c;
+$burgundy: #4a2c2a;
+$burgundy-deep: #351f1e;
+
+// Aliases (components)
+$cream: $bg;
+$cream-light: $bg-elevated;
+$cream-dark: $bg-card;
+$sand: rgba($gold, 0.25);
+$paper: $bg-card;
+$ink: $text;
+$ink-soft: $text-muted;
+$bronze: $gold;
+$bronze-light: $gold-light;
+$rose: $gold;
+$rose-deep: $gold-dark;
+$sage: $burgundy;
+$sage-light: $burgundy-deep;
+$sage-muted: rgba($gold, 0.45);
+$green-dark: $bg-deep;
+$green-muted: $burgundy;
+
+$primary-body-color: $text-muted;
+$secondary-body-color: $text;
+$primary-color: $text;
+$secondary-color: $text-muted;
+$accent-color: $gold;
+$white: #fff;
+$light-gray: $bg-elevated;
+$border-color: rgba($gold, 0.2);
+
+$fonts: (
+  'base': ('Source Serif 4', serif),
+  'heading': ('Cinzel', serif),
+  'display': ('Libre Baskerville', serif),
+  'size-base': 16px,
+  'line-height-base': 1.75
+);
+
+$sizes: (
+  'container-width': min(800px, 92vw),
+  'container-padding': 28px,
+  'section-padding': 100px 0,
+  'spacing-base': 28px,
+  'spacing-large': 56px,
+  'timeline-height': auto,
+  'timeline-photo-width': 240px,
+  'timeline-photo-height': 320px,
+  'timeline-photo-border-radius': 4px,
+  'timeline-photo-spacing': 0,
+  'timeline-photo-start-left': 0,
+  'timeline-photo-start-top': 0,
+  'timeline-photo-text-padding': 14px 20px,
+  'timeline-photo-text-border-radius': 4px,
+  'timeline-photo-text-bottom': 0,
+  'timeline-photo-text-min-width': 0,
+  'timeline-photo-text-shadow': none,
+  'timeline-photo-image-border-radius': 4px,
+  'timeline-photo-image-height': 320px,
+  'timeline-photo-image-max-width': 100%,
+  'timeline-photo-image-margin-top': 0,
+  'timeline-photo-image-shadow': 0 20px 50px rgba(0, 0, 0, 0.55),
+  'timeline-photo-title-padding': 0,
+  'timeline-photo-title-border-radius': 0,
+  'timeline-photo-title-shadow': none,
+  'timeline-photo-title-margin-bottom': 0,
+  'timeline-photo-description-max-width': 100%,
+  'timeline-photo-description-padding': 0,
+  'timeline-photo-description-line-height': 1.75,
+  'mobile-photo-size': 280px
+);
+
+$shadows: (
+  'box': 0 20px 60px rgba(0, 0, 0, 0.45),
+  'card': 0 8px 32px rgba(0, 0, 0, 0.35),
+  'text': 0 2px 20px rgba(0, 0, 0, 0.6)
+);
+
+$transitions: (
+  'base': all 0.4s ease
+);
+
+$breakpoints: (
+  'mobile': 768px,
+  'small': 480px,
+  'tablet': 1023px,
+  'desktop': 1024px
+);
+
+$z-indexes: (
+  'base': 1,
+  'overlay': 100,
+  'modal': 1000,
+  'splash': 9999,
+  'menu': 9998
+);
+
+$animations: (
+  'image-appear-duration': 1.5s,
+  'text-appear-duration': 1s,
+  'text-appear-delay': 0.5s,
+  'indicator-appear-duration': 1s,
+  'indicator-appear-delay': 1.5s,
+  'pulse-duration': 2s,
+  'bounce-duration': 1s
+);
+
+$colors: (
+  'body': (
+    'primary': $text-muted,
+    'secondary': $text
+  ),
+  'forms': (
+    'bg': $bg-deep,
+    'input-bg': $bg-card,
+    'input-text': $text,
+    'input-placeholder': rgba($text, 0.4),
+    'input-focus': rgba($gold, 0.45),
+    'input-error': #d47373,
+    'submit-bg': $gold,
+    'submit-hover': $gold-light,
+    'submit-disabled': rgba($gold, 0.35),
+    'error-bg': rgba(212, 115, 115, 0.1),
+    'error-border': rgba(212, 115, 115, 0.3)
+  ),
+  'hero': (
+    'text': $text,
+    'text-shadow': 0 4px 30px rgba(0, 0, 0, 0.8),
+    'gradient': linear-gradient(180deg, transparent 0%, transparent 50%, rgba(15, 14, 13, 0.35) 78%, rgba(15, 14, 13, 0.62) 100%)
+  ),
+  'location': (
+    'text': $text,
+    'overlay': rgba(15, 14, 13, 0.82),
+    'map-overlay': rgba(0, 0, 0, 0.25),
+    'map-shadow': rgba(0, 0, 0, 0.5)
+  ),
+  'car': (
+    'body': $gold,
+    'wheel': $text
+  ),
+  'dress-code': (
+    'bg': $bg,
+    'text': $text-muted,
+    'border': rgba($gold, 0.3),
+    'image-border': rgba($gold, 0.45),
+    'nav-dot': rgba($gold, 0.25),
+    'nav-dot-hover': rgba($gold, 0.5),
+    'nav-dot-active': $gold
+  ),
+  'plan-day': (
+    'bg': $bg-deep,
+    'text': $text,
+    'pattern-opacity': 0,
+    'circle-opacity': 0,
+    'shadow': rgba(0, 0, 0, 0.5),
+    'image-shadow': rgba(0, 0, 0, 0.6),
+    'gradient': linear-gradient(180deg, transparent 50%, rgba(15, 14, 13, 0.9) 100%)
+  ),
+  'calendar': (
+    'bg': $bg-card,
+    'shadow': rgba(0, 0, 0, 0.4),
+    'border': rgba($gold, 0.22),
+    'text': $text-muted,
+    'hover': rgba($gold, 0.08),
+    'selected-bg': $gold,
+    'selected-text': $bg-deep
+  ),
+  'white': #fff
+);
+
+$component-sizes: (
+  'car': (
+    'size': 60px,
+    'top-offset': -15px,
+    'window': 25px 15px,
+    'wheel': 15px,
+    'headlight': 8px
+  )
+);
+
+$palettes: (
+  'forbidden': (
+    'yellow': #e6c200,
+    'green': #3d6b4f,
+    'blue': #5a7a9a,
+    'red': #c45c5c,
+    'white': #f5f5f5,
+    'black': #0a0a0a
+  ),
+  'pastel': (
+    'pastel-1': #3d3835,
+    'pastel-2': #4a423c,
+    'pastel-3': #5c4a42,
+    'pastel-4': #4a5248,
+    'pastel-5': #6b5a48,
+    'pastel-6': #7a6b58,
+    'pastel-7': #5a4a48,
+    'pastel-8': #4a4540
+  )
+);
+
+$decorative: (
+  'circle-opacity': 0,
+  'circle-opacity-mobile': 0
+);

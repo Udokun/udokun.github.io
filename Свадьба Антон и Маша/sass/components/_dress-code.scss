@@ -1,0 +1,274 @@
+@use '../variables' as *;
+@use '../victorian' as *;
+
+.dress-code {
+    padding: map-get($sizes, "section-padding");
+    @include surface-main;
+    background: linear-gradient(180deg, $bg 0%, $burgundy-deep 100%);
+    position: relative;
+
+    .container {
+        max-width: min(800px, 92vw);
+        position: relative;
+        z-index: 2;
+        padding-bottom: 64px;
+
+        h2 {
+            @include victorian-heading;
+            @include victorian-ornament;
+            @include victorian-rule;
+            margin-bottom: 36px;
+        }
+
+        .dress-code-intro {
+            text-align: center;
+            font-family: map-get($fonts, "display");
+            font-style: italic;
+            font-size: 1.15rem;
+            color: $text-muted;
+            max-width: 32em;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+
+        .dress-carousel-block {
+            margin-top: 2.75rem;
+
+            & + & {
+                margin-top: 3.5rem;
+            }
+
+            &__title {
+                margin: 0 0 1.25rem;
+                text-align: center;
+                font-family: map-get($fonts, "heading");
+                font-size: 0.85rem;
+                font-weight: 500;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: $gold;
+            }
+        }
+
+        .color-palettes {
+            margin-bottom: 2.5rem;
+
+            .palette-title {
+                margin: 0 0 16px;
+                font-family: map-get($fonts, "heading");
+                font-size: 0.8rem;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                color: $gold;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                gap: 8px;
+                text-align: center;
+
+                img {
+                    width: 18px;
+                    height: 18px;
+                    opacity: 0.8;
+                    filter: brightness(0) saturate(100%) invert(78%) sepia(28%)
+                        saturate(600%) hue-rotate(5deg);
+                }
+            }
+
+            .forbidden-colors {
+                margin-bottom: 2rem;
+            }
+
+            .palette-swatches {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 14px;
+                justify-content: center;
+                margin-bottom: 1.5rem;
+            }
+
+            .swatch {
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                border: 1px solid rgba($gold, 0.35);
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+                transition: transform 0.25s ease;
+
+                &:hover {
+                    transform: scale(1.08);
+                    border-color: $gold;
+                }
+
+                &.swatch-cream { background-color: #e8dfd4; }
+                &.swatch-sand { background-color: #c4a484; }
+                &.swatch-rose { background-color: #9a7f72; }
+                &.swatch-sage-light { background-color: #6b7a6e; }
+                &.swatch-sage { background-color: #4a5c4e; }
+                &.swatch-sage-muted { background-color: #8b7355; }
+                &.swatch-blush { background-color: #8a6a62; }
+                &.swatch-warm { background-color: #5c5348; }
+                &.swatch-yellow { background-color: #c9a020; }
+                &.swatch-green { background-color: #2d5a40; }
+                &.swatch-blue { background-color: #3a5a7a; }
+                &.swatch-red { background-color: #9a3a3a; }
+                &.swatch-white { background-color: #f0ebe5; }
+                &.swatch-black { background-color: #0a0a0a; }
+            }
+        }
+    }
+
+    .dress-carousel {
+        --slides-per-view: 1;
+        --slide-gap: 12px;
+        position: relative;
+        max-width: min(960px, 94vw);
+        margin: 0 auto;
+        padding: 0 48px;
+        outline: none;
+
+        @media (min-width: 600px) {
+            --slides-per-view: 2;
+        }
+
+        @media (min-width: 900px) {
+            --slides-per-view: 3;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $gold;
+            outline-offset: 8px;
+        }
+
+        &__viewport {
+            overflow: hidden;
+            border-radius: 4px;
+            padding: var(--slide-gap) 0;
+            width: 100%;
+            container-type: inline-size;
+        }
+
+        &__track {
+            display: flex;
+            gap: var(--slide-gap);
+            width: max-content;
+            transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+
+        &__slide {
+            flex: 0 0 auto;
+            width: calc(
+                (100cqi - (var(--slides-per-view) - 1) * var(--slide-gap)) /
+                    var(--slides-per-view)
+            );
+            margin: 0;
+            aspect-ratio: 3 / 4;
+            max-height: min(52vh, 420px);
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid rgba($gold, 0.35);
+            box-shadow: map-get($shadows, "card");
+
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba($gold, 0.45);
+            border-radius: 50%;
+            background: rgba($bg-card, 0.92);
+            color: $gold;
+            font-family: map-get($fonts, "heading");
+            font-size: 1.75rem;
+            line-height: 1;
+            cursor: pointer;
+            transition: map-get($transitions, "base");
+            padding: 0 0 4px;
+
+            span {
+                display: block;
+            }
+
+            &:hover {
+                background: $gold;
+                color: $bg-deep;
+                border-color: $gold-light;
+            }
+
+            &:focus-visible {
+                outline: 2px solid $gold-light;
+                outline-offset: 2px;
+            }
+
+            &:disabled {
+                opacity: 0.35;
+                cursor: not-allowed;
+                pointer-events: none;
+            }
+
+            &--prev {
+                left: 0;
+            }
+
+            &--next {
+                right: 0;
+            }
+        }
+
+        &__counter {
+            margin: 16px 0 0;
+            text-align: center;
+            font-family: map-get($fonts, "heading");
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: $gold;
+        }
+
+        &__separator {
+            margin: 0 0.35em;
+            opacity: 0.6;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .dress-code {
+        .dress-carousel-block {
+            margin-top: 2rem;
+
+            & + & {
+                margin-top: 2.75rem;
+            }
+        }
+
+        .dress-carousel {
+            padding: 0 40px;
+
+            &__btn {
+                width: 36px;
+                height: 36px;
+                font-size: 1.5rem;
+            }
+
+            --slide-gap: 8px;
+
+            &__slide {
+                max-height: min(48vh, 380px);
+            }
+        }
+    }
+}

@@ -1,0 +1,85 @@
+@use '../variables' as *;
+@use '../victorian' as *;
+
+.hints {
+    position: relative;
+    padding: map-get($sizes, "section-padding");
+    @include surface-deep;
+    overflow: hidden;
+
+    .container {
+        position: relative;
+        z-index: 2;
+        max-width: map-get($sizes, "container-width");
+        margin: 0 auto;
+    }
+
+    h2 {
+        @include victorian-heading-light;
+        @include victorian-ornament;
+        @include victorian-rule;
+        margin-bottom: 40px;
+    }
+
+    a {
+        color: $gold-light;
+
+        &:hover {
+            color: $text;
+        }
+    }
+
+    .hint-intro {
+        text-align: center;
+        margin-bottom: 2.5rem;
+        color: $text-muted;
+        font-size: 1.05rem;
+        max-width: 32em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hints-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hint-item {
+        @include victorian-card;
+        padding: 28px 32px;
+        border-radius: 4px;
+        transition: map-get($transitions, "base");
+
+        &:hover {
+            border-color: rgba($gold, 0.5);
+            box-shadow: map-get($shadows, "box");
+        }
+
+        h3 {
+            font-family: map-get($fonts, "heading");
+            font-size: 0.9rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+            color: $gold;
+        }
+
+        p {
+            line-height: 1.75;
+            color: $text-muted;
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .hints {
+        padding: 72px 0;
+
+        .hint-item {
+            padding: 22px 20px;
+        }
+    }
+}

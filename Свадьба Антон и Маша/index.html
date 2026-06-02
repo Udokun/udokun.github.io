@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Приглашение на свадьбу Антона и Марии. 05 сентября 2026 года, база отдыха Горизонт"
+    />
+    <meta
+      name="keywords"
+      content="свадьба, приглашение, Антон, Мария, Малинки, 2026"
+    />
+    <meta name="author" content="Устина и Илья" />
+    <meta name="robots" content="index, follow" />
+    <!-- Primary Meta Tags -->
+    <title>Приглашение на свадьбу Антона и Марии</title>
+    <meta name="title" content="Приглашение на свадьбу Антона и Марии" />
+    <meta
+      name="description"
+      content="приглашение на нашу свадьбу!"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="ustina-i-ilya-2025.ru" />
+    <meta property="og:title" content="Приглашение на свадьбу Антона и Марии" />
+    <meta
+      property="og:description"
+      content="Приглашение на свадьбу Антона и Марии"
+    />
+    <meta property="og:image" content="/img/meta.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="ustina-i-ilya-2025.ru" />
+    <meta
+      property="twitter:title"
+      content="Приглашение на свадьбу Антона и Марии"
+    />
+    <meta
+      property="twitter:description"
+      content="Приглашение на свадьбу Антона и Марии"
+    />
+    <meta property="twitter:image" content="/img/meta.jpg" />
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.min.css" />
+  </head>
+  <body>
+    <button class="burger-btn" aria-label="Открыть меню" tabindex="0">
+      <span class="burger-line"></span>
+      <span class="burger-line"></span>
+      <span class="burger-line"></span>
+    </button>
+    <!-- Мобильная заставка -->
+    <div class="mobile-splash-screen">
+      <div class="splash-content">
+        <img src="img/main.jpg" alt="Антон и Мария" class="splash-image" />
+        <div class="splash-text">Приглашение на свадьбу</div>
+        <div class="swipe-indicator">
+          <span class="swipe-text">Открыть</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Боковое навигационное меню -->
+    <div class="side-menu">
+      <div class="menu-content">
+        <div class="menu-close">&times;</div>
+        <nav class="menu-nav">
+          <ul>
+            <li><a href="#plan-day">План дня</a></li>
+            <li><a href="#location">Локация</a></li>
+            <li><a href="#transfer">Трансфер</a></li>
+            <li><a href="#dress-code">Дресс-код</a></li>
+            <li><a href="#hints">Подсказки</a></li>
+            <li><a href="#rsvp">Анкета</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Секция с музыкой -->
+    <div class="music-control">
+      <button id="musicToggle" class="music-toggle">
+        <span class="music-hint">Нажми меня</span>
+        <i class="fas fa-music"></i>
+      </button>
+      <audio id="backgroundMusic" loop>
+        <source src="audio/ambient.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+
+    <!-- Главная секция -->
+    <section class="hero">
+      <img
+        src="img/main.jpg"
+        alt="Антон и Мария"
+        class="hero-image"
+        width="1920"
+        height="1080"
+      />
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div class="text-overlay">
+          <h1 class="names">
+            Мария<img
+              src="icons/ring.svg"
+              alt=""
+              class="ring-icon"
+            />Антон
+          </h1>
+          <p class="date">5 сентября 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Информационная секция -->
+    <section class="info" id="info">
+      <div class="circle-1"></div>
+      <div class="circle-2"></div>
+      <div class="circle-3"></div>
+      <div class="container">
+        <h2>Дорогие друзья и родные!</h2>
+        <p>
+          Если вы сейчас читаете этот текст, значит совсем скоро вы увидите одного из нас в свадебном платье и думаем, что вы догадаетесь, кого именно.
+        </p>
+        <div class="calendar">
+          <div class="calendar-title">Сентябрь 2026</div>
+          <div class="calendar-weekdays">
+            <div class="weekday">Пн</div>
+            <div class="weekday">Вт</div>
+            <div class="weekday">Ср</div>
+            <div class="weekday">Чт</div>
+            <div class="weekday">Пт</div>
+            <div class="weekday">Сб</div>
+            <div class="weekday">Вс</div>
+          </div>
+          <div class="calendar-days">
+            <!-- Дни будут добавлены через JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция плана дня -->
+    <section class="plan-day" id="plan-day">
+      <div class="circle-1"></div>
+      <div class="circle-2"></div>
+      <div class="circle-3"></div>
+      <div class="container">
+        <h2>План дня</h2>
+        <div class="day-schedule-wrap">
+          <ol class="day-schedule">
+            <li class="schedule-item">
+              <span class="event">Время сбора гостей</span>
+              <span class="time">15:00</span>
+            </li>
+            <li class="schedule-item">
+              <span class="event">Обмен кольцами</span>
+              <span class="time">15:30</span>
+            </li>
+            <li class="schedule-item">
+              <span class="event">Праздничный ужин и танцы</span>
+              <span class="time">16:00</span>
+            </li>
+            <li class="schedule-item">
+              <span class="event">Завершение вечера</span>
+              <span class="time">23:00</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция локации -->
+    <section class="location" id="location">
+      <div class="container">
+        <h2>Локация</h2>
+        <p class="location-description">
+          Выездная церемония, как и банкет пройдут по адресу:
+        </p>
+        <p class="location-address">ул. Отдыха, 5А</p>
+        <p class="location-name">База отдыха "Горизонт"</p>
+        <div class="map-container">
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3Af0fc3365f060b0441b4e93a8c96c5114fc75b9ed9a1d6f2c3b1556e30f726658&amp;source=constructor"
+            width="100%"
+            height="400"
+            frameborder="0"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция трансфера -->
+    <section class="transfer" id="transfer">
+      <div class="circle-1"></div>
+      <div class="circle-2"></div>
+      <div class="circle-3"></div>
+      <div class="container">
+        <h2>На чём добраться?</h2>
+        <p class="text-center">
+          Добраться до места торжества можно на личном транспорте или на такси
+        </p>
+        <!-- <p class="text-center">
+          Транспорт будет ожидать в пункте сбора в 14:20 по адресу:
+        </p> -->
+        <div class="car-animation-container">
+          <div class="road"></div>
+          <div class="car">
+            <img src="icons/bus.svg" alt="Bus icon" />
+          </div>
+        </div>
+        <!-- <p class="text-center location-address">
+          Площадь Комсомольская, г. Волгодонск
+        </p> -->
+        <p class="text-center">
+          В конце вечера вас будет ждать трансфер, который довезёт Вас до
+          Волгодонска. <br />Отправление в 23:00.
+        </p>
+        <!-- <p class="text-center location-address">
+          Площадь Комсомольская, г. Волгодонск
+        </p> -->
+      </div>
+    </section>
+
+    <!-- Секция дресс-кода -->
+    <section class="dress-code" id="dress-code">
+      <div class="container">
+        <h2>Дресс-код</h2>
+        <p class="dress-code-intro">
+          Для нас главное - ваше присутствие!<br />
+          Но мы будем рады, если в своих нарядах вы поддержите цветовую гамму,
+          для создания красивых фотографий.
+        </p>
+
+        <div class="dress-carousel-block">
+          <h3 class="dress-carousel-block__title">Для девушек</h3>
+          <div
+            class="dress-carousel"
+            data-dress-carousel="women"
+            aria-roledescription="carousel"
+            aria-label="Примеры образов для девушек"
+            tabindex="0"
+          >
+            <button
+              type="button"
+              class="dress-carousel__btn dress-carousel__btn--prev"
+              aria-label="Предыдущее фото"
+            >
+              <span aria-hidden="true">‹</span>
+            </button>
+
+            <div class="dress-carousel__viewport">
+              <div class="dress-carousel__track"></div>
+            </div>
+
+            <button
+              type="button"
+              class="dress-carousel__btn dress-carousel__btn--next"
+              aria-label="Следующее фото"
+            >
+              <span aria-hidden="true">›</span>
+            </button>
+
+            <p class="dress-carousel__counter" aria-live="polite">
+              <span class="dress-carousel__current">1</span>
+              <span class="dress-carousel__separator">/</span>
+              <span class="dress-carousel__total">7</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="dress-carousel-block">
+          <h3 class="dress-carousel-block__title">Для мужчин</h3>
+          <div
+            class="dress-carousel"
+            data-dress-carousel="men"
+            aria-roledescription="carousel"
+            aria-label="Примеры образов для мужчин"
+            tabindex="0"
+          >
+            <button
+              type="button"
+              class="dress-carousel__btn dress-carousel__btn--prev"
+              aria-label="Предыдущее фото"
+            >
+              <span aria-hidden="true">‹</span>
+            </button>
+
+            <div class="dress-carousel__viewport">
+              <div class="dress-carousel__track"></div>
+            </div>
+
+            <button
+              type="button"
+              class="dress-carousel__btn dress-carousel__btn--next"
+              aria-label="Следующее фото"
+            >
+              <span aria-hidden="true">›</span>
+            </button>
+
+            <p class="dress-carousel__counter" aria-live="polite">
+              <span class="dress-carousel__current">1</span>
+              <span class="dress-carousel__separator">/</span>
+              <span class="dress-carousel__total">7</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция подсказок -->
+    <section class="hints" id="hints">
+      <div class="container">
+        <h2>Подсказки</h2>
+        <div class="hints-content">
+          <p class="hint-intro">
+            Мы догадываемся, что после получения приглашения у вас могут
+            появиться вопросы
+          </p>
+
+          <div class="hint-item">
+            <h3>Сюрпризы</h3>
+            <p>
+              Возьмите с собой отличное настроение! Приветствуются ваши
+              поздравления, активное участие в интерактивах, творческие
+              выступления! <br />Вы можете обратиться к нашему ведущему для
+              воплощения своих идей. <br />Сергей Галинский<br /><a
+                href="tel:+79188946999"
+                >+7 (918) 894-69-99</a
+              >
+            </p>
+          </div>
+
+          <div class="hint-item">
+            <h3>Цветы</h3>
+            <p>
+              Наш праздник будет окружён изобилием цветов, поэтому приятным
+              комплиментом для нас вместо букета будет бутылка вашего любимого
+              алкоголя, которую мы откроем на ближайшем совместном празднике.
+            </p>
+          </div>
+
+          <div class="hint-item">
+            <h3>Что дарить?</h3>
+            <p>
+              В качестве подарка будем рады вкладу в бюджет нашей семьи. Он
+              точно поможет осуществить нашу мечту в реальность!
+            </p>
+          </div>
+
+          <div class="hint-item">
+            <h3>Маленькие гости</h3>
+            <p>
+              Дорогие гости, мы будем благодарны, если вы посвятите нашему дню
+              всё своё внимание и энергию, сможете по-настоящему отдохнуть и
+              развлечься. Поэтому будем признательны, если наш праздник пройдёт
+              в кругу взрослых. <br />Если по каким-то причинам у Вас не
+              получится оставить ребёнка дома,
+              <a href="#contacts">сообщите</a> нам об этом.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция обратного отсчёта -->
+    <section class="countdown">
+      <img
+        class="countdown-bg"
+        src="img/clock.jpg"
+        alt=""
+        width="1920"
+        height="1080"
+        decoding="async"
+        aria-hidden="true"
+      />
+      <div class="countdown-shade" aria-hidden="true"></div>
+      <div class="countdown-content">
+        <div class="content-wrapper">
+          <h2>Ждем вас через...</h2>
+          <div class="countdown-timer">
+            <div class="countdown-item">
+              <span id="days" class="countdown-number">00</span>
+              <span class="countdown-label">дней</span>
+            </div>
+            <div class="countdown-item">
+              <span id="hours" class="countdown-number">00</span>
+              <span class="countdown-label">часов</span>
+            </div>
+            <div class="countdown-item">
+              <span id="minutes" class="countdown-number">00</span>
+              <span class="countdown-label">минут</span>
+            </div>
+            <div class="countdown-item">
+              <span id="seconds" class="countdown-number">00</span>
+              <span class="countdown-label">секунд</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP форма -->
+    <section class="rsvp" id="rsvp">
+      <div class="container">
+        <h2>Анкета</h2>
+        <p class="subtitle">
+          Просим подтвердить своё присутствие любым удобным для вас способом до
+          20 июля 2025 года
+        </p>
+        <p class="subtitle">
+          Ответьте пожалуйста на несколько вопросов, которые мы для вас
+          подготовили
+        </p>
+        <form class="form" id="rsvpForm" autocomplete="off">
+          <div class="form-group">
+            <label>Ваше Имя и Фамилия</label>
+            <input type="text" name="fullName" />
+          </div>
+
+          <div class="form-group">
+            <label>Сможете ли Вы присутствовать на нашем торжестве?</label>
+            <div class="radio-group">
+              <label>
+                <input
+                  type="radio"
+                  name="attendance"
+                  value="Обязательно приду"
+                />
+                С удовольствием приду
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="attendance"
+                  value="К сожалению, не смогу"
+                />
+                К сожалению не смогу прийти
+              </label>
+              <label>
+                <input type="radio" name="attendance" value="Отвечу позже" />
+                Отвечу позже
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group attending-only">
+            <label>С кем Вы будете?</label>
+            <div class="radio-group">
+              <label>
+                <input
+                  type="radio"
+                  name="guests"
+                  value="Сам/а отожгу за двоих"
+                />
+                Сам/а отожгу за двоих
+              </label>
+              <label>
+                <input type="radio" name="guests" value="Буду не один/одна" />
+                Буду не один/одна
+              </label>
+            </div>
+          </div>
+
+          <div
+            class="form-group companion-input attending-only"
+            style="display: none"
+          >
+            <input
+              type="text"
+              name="companion_name"
+              placeholder="Имя спутника/цы"
+            />
+          </div>
+
+          <div class="form-group attending-only">
+            <label>Как будете возвращаться домой?</label>
+            <div class="radio-group">
+              <label>
+                <input
+                  type="radio"
+                  name="transport"
+                  value="На своей машине или на такси"
+                />
+                На своей машине или на такси
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="transport"
+                  value="На трансфере, который вы подготовили"
+                />
+                На трансфере, который вы подготовили
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group attending-only">
+            <label>Что будете пить?</label>
+            <div class="radio-group">
+              <label>
+                <input
+                  type="checkbox"
+                  name="drinks[]"
+                  value="Что нальют"
+                  class="default-drink"
+                />
+                Что нальют
+              </label>
+              <label>
+                <input type="checkbox" name="drinks[]" value="Водка" />
+                Водка
+              </label>
+              <label>
+                <input type="checkbox" name="drinks[]" value="Виски" />
+                Виски
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="drinks[]"
+                  value="Вино"
+                  class="wine-checkbox"
+                />
+                Вино
+              </label>
+              <div class="wine-input" style="display: none">
+                <select name="wine" class="wine-select">
+                  <option value="" disabled selected>Выберите вино</option>
+                  <option value="Красное сухое">Красное сухое</option>
+                  <option value="Белое сухое">Белое сухое</option>
+                  <option value="Красное полусладкое">
+                    Красное полусладкое
+                  </option>
+                  <option value="Белое полусладкое">Белое полусладкое</option>
+                  <option value="Без разницы">Без разницы</option>
+                </select>
+              </div>
+              <label>
+                <input type="checkbox" name="drinks[]" value="Шампанское" />
+                Шампанское
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="drinks[]"
+                  value="Не буду пить алкоголь"
+                  class="no-alcohol"
+                />
+                Не буду пить алкоголь
+              </label>
+            </div>
+          </div>
+
+          <div
+            class="form-group companion-drinks attending-only"
+            style="display: none"
+          >
+            <label>Что будет пить Ваш спутник/ца?</label>
+            <div class="radio-group">
+              <label>
+                <input
+                  type="checkbox"
+                  name="companion_drinks[]"
+                  value="Что нальют"
+                  class="default-drink"
+                />
+                Что нальют
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="companion_drinks[]"
+                  value="Водка"
+                />
+                Водка
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="companion_drinks[]"
+                  value="Виски"
+                />
+                Виски
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="companion_drinks[]"
+                  value="Вино"
+                  class="wine-checkbox"
+                />
+                Вино
+              </label>
+              <div class="companion-wine-input" style="display: none">
+                <select name="companion_wine" class="wine-select">
+                  <option value="" disabled selected>Выберите вино</option>
+                  <option value="Красное сухое">Красное сухое</option>
+                  <option value="Белое сухое">Белое сухое</option>
+                  <option value="Красное полусладкое">
+                    Красное полусладкое
+                  </option>
+                  <option value="Белое полусладкое">Белое полусладкое</option>
+                  <option value="Без разницы">Без разницы</option>
+                </select>
+              </div>
+              <label>
+                <input
+                  type="checkbox"
+                  name="companion_drinks[]"
+                  value="Шампанское"
+                />
+                Шампанское
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="companion_drinks[]"
+                  value="Не буду пить алкоголь"
+                  class="no-alcohol"
+                />
+                Не буду пить алкоголь
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="submit-btn">Отправить</button>
+          <div class="form-errors">
+            <ul class="error-list"></ul>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Модальное окно подтверждения -->
+    <div class="success-modal">
+      <div class="modal-content">
+        <div class="modal-icon">✓</div>
+        <h3>Спасибо!</h3>
+        <p>Почтовый голубь уже летит к нам</p>
+        <button class="modal-close">Закрыть</button>
+      </div>
+    </div>
+
+    <!-- Контакты -->
+    <section class="contacts" id="contacts">
+      <div class="circle-1"></div>
+      <div class="circle-2"></div>
+      <div class="circle-3"></div>
+      <div class="container">
+        <h2>Наши контакты</h2>
+        <div class="contacts-wrapper">
+          <div class="contact-person">
+            <h3>Жених</h3>
+            <p class="name">Антон</p>
+            <p class="phone">
+              <a href="tel:+79885668289">+7 (988) 566-82-89</a>
+            </p>
+            <div class="social-links">
+              <a href="https://vk.com/id90608123" class="social-link">
+                <i class="fab fa-vk"></i>
+              </a>
+            </div>
+          </div>
+          <div class="contact-person">
+            <h3>Невеста</h3>
+            <p class="name">Мария</p>
+            <p class="phone">
+              <a href="tel:+79515292177">+7 (951) 529-21-77</a>
+            </p>
+            <div class="social-links">
+              <a href="https://vk.com/evamalinin" class="social-link">
+                <i class="fab fa-vk"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Made by Udokun -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
